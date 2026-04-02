@@ -32,8 +32,8 @@ vwan_name = "vwan-enterprise-prod"
 hub_eastus_name           = "vhub-eastus-prod"
 hub_eastus_address_prefix = "10.100.0.0/23"
 
-hub_weu_name              = "vhub-weu-prod"
-hub_weu_address_prefix    = "10.110.0.0/23"
+hub_weu_name           = "vhub-weu-prod"
+hub_weu_address_prefix = "10.110.0.0/23"
 
 
 # =========================
@@ -42,8 +42,8 @@ hub_weu_address_prefix    = "10.110.0.0/23"
 spoke_eastus_name          = "vnet-spoke-eus-prod"
 spoke_eastus_address_space = ["10.101.0.0/16"]
 
-spoke_weu_name             = "vnet-spoke-weu-prod"
-spoke_weu_address_space    = ["10.111.0.0/16"]
+spoke_weu_name          = "vnet-spoke-weu-prod"
+spoke_weu_address_space = ["10.111.0.0/16"]
 
 
 # Subnets (same structure for both regions)
