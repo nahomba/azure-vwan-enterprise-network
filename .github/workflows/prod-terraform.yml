@@ -5,17 +5,19 @@ on:
     branches:
       - main
     paths:
+      # Trigger only when prod or modules change
       - 'terraform/environments/prod/**'
       - 'terraform/modules/**'
       - '.github/workflows/**'
-  workflow_dispatch:
+  workflow_dispatch:   # Allow manual trigger
 
+# Prevent multiple prod deployments at the same time
 concurrency:
   group: prod-deployment
   cancel-in-progress: false
 
 permissions:
-  id-token: write
+  id-token: write   # Required for Azure OIDC login (no secrets needed)
   contents: read
   security-events: write
 
@@ -29,56 +31,72 @@ jobs:
 # VALIDATION
 # =========================
   validation:
+    name: Terraform Validation
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout repository
       - uses: actions/checkout@v4
 
+      # Install Terraform
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: ${{ env.TF_VERSION }}
 
-      - run: terraform fmt -check -recursive
+      # Ensure Terraform code is properly formatted
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
 
-      - working-directory: ${{ env.WORKING_DIR }}
+      # Initialize Terraform (no backend needed here)
+      - name: Terraform Init (No Backend)
+        working-directory: ${{ env.WORKING_DIR }}
         run: terraform init -backend=false
 
-      - working-directory: ${{ env.WORKING_DIR }}
+      # Validate Terraform configuration
+      - name: Terraform Validate
+        working-directory: ${{ env.WORKING_DIR }}
         run: terraform validate
 
 
 # =========================
-# SECURITY
+# SECURITY SCAN
 # =========================
   security:
+    name: Security Scan (Checkov)
     runs-on: ubuntu-latest
     needs: validation
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: bridgecrewio/checkov-action@master
+      # Run static security analysis on Terraform code
+      - name: Run Checkov Scan
+        uses: bridgecrewio/checkov-action@master
         with:
           directory: ${{ env.WORKING_DIR }}
           framework: terraform
-          soft_fail: false
+          soft_fail: false   # Fail pipeline on security issues (strict for prod)
 
 
 # =========================
-# PLAN
+# TERRAFORM PLAN
 # =========================
   plan:
+    name: Terraform Plan (Prod)
     runs-on: ubuntu-latest
     needs: [validation, security]
+
+    # Protected environment (can have approval rules)
     environment: prod-plan
+
+    # Output used to control downstream jobs
+    outputs:
+      exitcode: ${{ steps.plan.outputs.exitcode }}
 
     steps:
       - uses: actions/checkout@v4
 
-      # 🔍 DEBUG (REMOVE AFTER FIX)
-      - name: Debug Azure Client ID
-        run: echo "CLIENT_ID=${{ secrets.AZURE_CLIENT_ID }}"
-
+      # Login to Azure using OIDC (no client secret needed)
       - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
@@ -86,10 +104,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      # Install Terraform
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: ${{ env.TF_VERSION }}
 
+      # Initialize Terraform with remote backend (Azure Storage)
       - name: Terraform Init
         working-directory: ${{ env.WORKING_DIR }}
         env:
@@ -101,48 +121,81 @@ jobs:
             -backend-config="container_name=tfstate" \
             -backend-config="key=prod.terraform.tfstate"
 
+      # Run Terraform Plan and capture exit code
       - name: Terraform Plan
+        id: plan
         working-directory: ${{ env.WORKING_DIR }}
         env:
           ARM_USE_OIDC: true
           TF_VAR_admin_password: ${{ secrets.ADMIN_PASSWORD }}
           TF_VAR_ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
         run: |
+          # Default exit code
+          export exitcode=0
+
+          # Run plan with detailed exit code
           terraform plan \
             -var-file="terraform.tfvars" \
             -compact-warnings \
             -input=false \
-            -out=tfplan
+            -lock-timeout=5m \
+            -detailed-exitcode \
+            -out=tfplan \
+            || export exitcode=$?
 
-      - uses: actions/upload-artifact@v4
+          # Save exit code for later jobs
+          echo "exitcode=$exitcode" >> $GITHUB_OUTPUT
+
+          # Exit if Terraform failed
+          if [ $exitcode -eq 1 ]; then
+            echo "Plan failed"
+            exit 1
+          fi
+
+      # Upload plan file for apply stage
+      - name: Upload Plan Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: tfplan-prod
           path: ${{ env.WORKING_DIR }}/tfplan
 
 
 # =========================
-# APPROVAL
+# MANUAL APPROVAL
 # =========================
   approval:
+    name: Manual Approval (Prod)
     runs-on: ubuntu-latest
     needs: plan
+
+    # Only run if there are changes (exit code 2)
+    if: needs.plan.outputs.exitcode == '2'
+
+    # Protected environment → triggers approval gate
     environment: prod-approval
 
     steps:
-      - run: echo "Waiting for approval..."
+      - run: echo "Waiting for production approval..."
 
 
 # =========================
 # APPLY
 # =========================
   apply:
+    name: Terraform Apply (Prod)
     runs-on: ubuntu-latest
     needs: [plan, approval]
+
+    # Only run if changes exist
+    if: needs.plan.outputs.exitcode == '2'
+
+    # Strongest protection (final prod environment)
     environment: prod
 
     steps:
       - uses: actions/checkout@v4
 
+      # Azure login again (jobs are isolated)
       - name: Azure Login (OIDC)
         uses: azure/login@v2
         with:
@@ -150,10 +203,12 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      # Install Terraform
       - uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: ${{ env.TF_VERSION }}
 
+      # Re-initialize backend
       - name: Terraform Init
         working-directory: ${{ env.WORKING_DIR }}
         env:
@@ -165,11 +220,14 @@ jobs:
             -backend-config="container_name=tfstate" \
             -backend-config="key=prod.terraform.tfstate"
 
-      - uses: actions/download-artifact@v4
+      # Download previously generated plan
+      - name: Download Plan Artifact
+        uses: actions/download-artifact@v4
         with:
           name: tfplan-prod
           path: ${{ env.WORKING_DIR }}
 
+      # Apply Terraform plan (exact execution of approved plan)
       - name: Terraform Apply
         working-directory: ${{ env.WORKING_DIR }}
         env:
@@ -178,6 +236,7 @@ jobs:
           TF_VAR_ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
         run: terraform apply -auto-approve tfplan
 
+      # Output Terraform results (useful for debugging or integrations)
       - name: Terraform Output
         working-directory: ${{ env.WORKING_DIR }}
         run: terraform output -json
