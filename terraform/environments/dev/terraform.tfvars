@@ -45,7 +45,7 @@ frontdoor_name = "afd-enterprise-dev"
 
 # Monitoring
 log_analytics_name = "law-vwan-dev"
-alert_email        = ""
+alert_email = "nahqueeniva@yahoo.com"
 
 # Tags
 tags = {
