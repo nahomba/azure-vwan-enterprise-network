@@ -35,18 +35,18 @@ spoke_dev_name          = "vnet-dev-eastus"
 spoke_dev_address_space = ["10.1.0.0/16"]
 
 spoke_dev_subnets = {
-web = {
-name             = "snet-web"
-address_prefixes = ["10.1.1.0/24"]
-}
-app = {
-name             = "snet-app"
-address_prefixes = ["10.1.2.0/24"]
-}
-data = {
-name             = "snet-data"
-address_prefixes = ["10.1.3.0/24"]
-}
+  web = {
+    name             = "snet-web"
+    address_prefixes = ["10.1.1.0/24"]
+  }
+  app = {
+    name             = "snet-app"
+    address_prefixes = ["10.1.2.0/24"]
+  }
+  data = {
+    name             = "snet-data"
+    address_prefixes = ["10.1.3.0/24"]
+  }
 }
 
 # =========================
@@ -67,9 +67,9 @@ firewall_sku_tier    = "Standard"
 appgw_eastus_name = "appgw-eastus-dev"
 
 appgw_sku = {
-name     = "Standard_v2"
-tier     = "Standard_v2"
-capacity = 2
+  name     = "Standard_v2"
+  tier     = "Standard_v2"
+  capacity = 2
 }
 
 # =========================
@@ -96,9 +96,9 @@ alert_email        = "[queenivanah@outlook.com](mailto:queenivanah@outlook.com)"
 # =========================
 
 tags = {
-Environment = "dev"
-Project     = "VWAN-Enterprise"
-ManagedBy   = "Terraform"
+  Environment = "dev"
+  Project     = "VWAN-Enterprise"
+  ManagedBy   = "Terraform"
 }
 
 # =========================
