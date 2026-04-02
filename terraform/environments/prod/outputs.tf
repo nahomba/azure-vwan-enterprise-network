@@ -122,13 +122,13 @@ output "monitoring_action_group_id" {
 
 output "deployment_summary" {
   value = {
-    environment    = var.environment
-    regions        = ["East US", "West Europe"]
-    hubs           = 2
-    firewalls      = 2
-    spokes         = 2
-    vms            = 2
-    app_gateways   = 2
+    environment  = var.environment
+    regions      = ["East US", "West Europe"]
+    hubs         = 2
+    firewalls    = 2
+    spokes       = 2
+    vms          = 2
+    app_gateways = 2
   }
 }
 
@@ -139,15 +139,15 @@ output "deployment_summary" {
 output "connectivity_info" {
   value = {
     east_us = {
-      hub_address     = var.vhub_eastus_address_prefix
-      spoke_address   = var.spoke_eastus_address_space[0]
-      vm_private_ip   = module.vm_eastus.private_ip
+      hub_address      = var.vhub_eastus_address_prefix
+      spoke_address    = var.spoke_eastus_address_space[0]
+      vm_private_ip    = module.vm_eastus.private_ip
       appgw_private_ip = module.appgateway_eastus.private_ip
     }
     west_europe = {
-      hub_address     = var.vhub_westeu_address_prefix
-      spoke_address   = var.spoke_westeu_address_space[0]
-      vm_private_ip   = module.vm_westeu.private_ip
+      hub_address      = var.vhub_westeu_address_prefix
+      spoke_address    = var.spoke_westeu_address_space[0]
+      vm_private_ip    = module.vm_westeu.private_ip
       appgw_private_ip = module.appgateway_westeu.private_ip
     }
   }

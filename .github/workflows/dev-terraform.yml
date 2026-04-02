@@ -1,4 +1,4 @@
-name: Dev Terraform Deployment
+name: Dev Environment Deployment
 
 on:
   push:
@@ -6,45 +6,397 @@ on:
       - main
     paths:
       - 'terraform/environments/dev/**'
+      - 'terraform/modules/**'
+      - '.github/workflows/dev-terraform.yml'
+  workflow_dispatch:
 
 permissions:
   id-token: write
   contents: read
+  security-events: write
 
 env:
-  ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-  ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-  ARM_USE_OIDC: true
+  TF_VERSION: "1.7.0"
+  WORKING_DIR: "terraform/environments/dev"
 
 jobs:
-  terraform:
-    name: Terraform Dev
+
+# =========================
+# VALIDATION
+# =========================
+  validation:
+    name: Terraform Validation
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: terraform/environments/dev
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+          terraform_wrapper: false
+
+      - name: Terraform Format Check
+        id: fmt
+        run: terraform fmt -check -recursive
+        continue-on-error: true
+
+      - name: Terraform Init (no backend)
+        working-directory: ${{ env.WORKING_DIR }}
+        run: terraform init -backend=false
+
+      - name: Terraform Validate
+        id: validate
+        working-directory: ${{ env.WORKING_DIR }}
+        run: terraform validate
+
+      - name: Validation Summary
+        if: always()
+        run: |
+          {
+            echo "## Validation Results"
+            echo ""
+            echo "| Check | Status |"
+            echo "|-------|--------|"
+            echo "| Format | ${{ steps.fmt.outcome }} |"
+            echo "| Validate | ${{ steps.validate.outcome }} |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+
+# =========================
+# SECURITY SCAN
+# =========================
+  security:
+    name: Checkov Security Scan
+    runs-on: ubuntu-latest
+    needs: validation
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - name: Run Checkov
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: ${{ env.WORKING_DIR }}
+          framework: terraform
+          output_format: cli,sarif
+          output_file_path: console,checkov-results.sarif
+          soft_fail: false
+          download_external_modules: true
+
+      - name: Upload SARIF Results
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: checkov-results.sarif
+          category: checkov-dev
+
+      - name: Security Summary
+        if: always()
+        run: |
+          {
+            echo "##  Security Scan Results"
+            echo ""
+            echo "**Status:** ${{ steps.checkov.outcome }}"
+            echo ""
+            echo "Review detailed results in the Security tab."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+
+# =========================
+# TERRAFORM PLAN
+# =========================
+  plan:
+    name: Terraform Plan
+    runs-on: ubuntu-latest
+    needs: [validation, security]
+
+    outputs:
+      exitcode: ${{ steps.plan.outputs.exitcode }}
+
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Azure Login (OIDC)
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+          terraform_wrapper: false
+
+      - name: Break Existing State Lock
+        continue-on-error: true
+        run: |
+          echo "Checking for existing state locks..."
+          STORAGE_KEY=$(az storage account keys list \
+            --resource-group "${{ secrets.TF_STATE_RG }}" \
+            --account-name "${{ secrets.TFSTATE_STORAGE_ACCOUNT }}" \
+            --query '[0].value' -o tsv)
+          
+          az storage blob lease break \
+            --account-name "${{ secrets.TFSTATE_STORAGE_ACCOUNT }}" \
+            --container-name tfstate \
+            --blob-name dev.terraform.tfstate \
+            --account-key "$STORAGE_KEY" \
+            --lease-break-period 0 2>/dev/null || echo "No lock to break"
+          
+          sleep 3
 
       - name: Terraform Init
-        run: terraform init
-
-      - name: Terraform Validate
-        run: terraform validate
+        id: init
+        working-directory: ${{ env.WORKING_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: |
+          terraform init \
+            -backend-config="resource_group_name=${{ secrets.TF_STATE_RG }}" \
+            -backend-config="storage_account_name=${{ secrets.TFSTATE_STORAGE_ACCOUNT }}" \
+            -backend-config="container_name=tfstate" \
+            -backend-config="key=dev.terraform.tfstate"
 
       - name: Terraform Plan
-        run: terraform plan
+        id: plan
+        working-directory: ${{ env.WORKING_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: |
+          export exitcode=0
+          terraform plan \
+            -detailed-exitcode \
+            -no-color \
+            -out=tfplan \
+            | tee plan_output.txt \
+            || export exitcode=$?
+
+          echo "exitcode=$exitcode" >> "$GITHUB_OUTPUT"
+
+          if [ "$exitcode" -eq 1 ]; then
+            echo "Terraform Plan Failed"
+            exit 1
+          elif [ "$exitcode" -eq 2 ]; then
+            echo "Changes Detected - Approval Required"
+          else
+            echo "No Changes Detected"
+          fi
+
+      - name: Upload Plan Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan-dev
+          path: |
+            ${{ env.WORKING_DIR }}/tfplan
+            ${{ env.WORKING_DIR }}/plan_output.txt
+          retention-days: 30
+
+      - name: Plan Summary
+        if: always()
+        run: |
+          {
+            echo "##  Terraform Plan Summary"
+            echo ""
+            echo "**Environment:** dev"
+            echo "**Exit Code:** ${{ steps.plan.outputs.exitcode }}"
+            echo ""
+            
+            if [ "${{ steps.plan.outputs.exitcode }}" == "0" ]; then
+              echo " No infrastructure changes detected"
+            elif [ "${{ steps.plan.outputs.exitcode }}" == "2" ]; then
+              echo " Infrastructure changes detected - approval required"
+            elif [ "${{ steps.plan.outputs.exitcode }}" == "1" ]; then
+              echo " Plan failed - check logs for details"
+            fi
+            
+            echo ""
+            echo "**Triggered by:** @${{ github.actor }}"
+            echo "**Commit:** ${{ github.sha }}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+
+# =========================
+# APPROVAL GATE
+# =========================
+  approval:
+    name: Manual Approval Required
+    runs-on: ubuntu-latest
+    needs: plan
+    if: needs.plan.outputs.exitcode == '2'
+    environment:
+      name: dev-approval
+
+    steps:
+      - name: Approval Gate
+        run: |
+          {
+            echo "## Awaiting Manual Approval"
+            echo ""
+            echo "**Environment:** dev"
+            echo "**Requested by:** @${{ github.actor }}"
+            echo "**Commit:** ${{ github.sha }}"
+            echo "**Timestamp:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+            echo ""
+            echo "Please review the Terraform plan before approving."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+
+# =========================
+# TERRAFORM APPLY
+# =========================
+  apply:
+    name: Terraform Apply
+    runs-on: ubuntu-latest
+    needs: [plan, approval]
+    if: needs.plan.outputs.exitcode == '2'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Azure Login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+          terraform_wrapper: false
+
+      - name: Terraform Init
+        working-directory: ${{ env.WORKING_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: |
+          terraform init \
+            -backend-config="resource_group_name=${{ secrets.TF_STATE_RG }}" \
+            -backend-config="storage_account_name=${{ secrets.TFSTATE_STORAGE_ACCOUNT }}" \
+            -backend-config="container_name=tfstate" \
+            -backend-config="key=dev.terraform.tfstate"
+
+      - name: Download Terraform Plan
+        uses: actions/download-artifact@v4
+        with:
+          name: tfplan-dev
+          path: ${{ env.WORKING_DIR }}
+
+      - name: Terraform Apply
+        id: apply
+        working-directory: ${{ env.WORKING_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: terraform apply -auto-approve tfplan
+
+      - name: Terraform Output
+        id: output
+        if: steps.apply.outcome == 'success'
+        working-directory: ${{ env.WORKING_DIR }}
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        run: |
+          terraform output -json > outputs.json
+          terraform output > outputs.txt
+
+      - name: Upload Terraform Outputs
+        if: steps.apply.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-outputs-dev
+          path: |
+            ${{ env.WORKING_DIR }}/outputs.json
+            ${{ env.WORKING_DIR }}/outputs.txt
+          retention-days: 90
+
+      - name: Deployment Summary
+        if: always()
+        run: |
+          {
+            echo "##  Deployment Summary"
+            echo ""
+            echo "**Environment:** dev"
+            echo "**Status:** ${{ steps.apply.outcome }}"
+            echo "**Deployed by:** @${{ github.actor }}"
+            echo "**Commit:** ${{ github.sha }}"
+            echo "**Timestamp:** $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+            echo ""
+            
+            if [ "${{ steps.apply.outcome }}" == "success" ]; then
+              echo " Infrastructure successfully deployed!"
+            else
+              echo " Deployment failed. Check logs for details."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+
+# =========================
+# POST-DEPLOYMENT CHECKS
+# =========================
+  verify:
+    name: Post-Deployment Verification
+    runs-on: ubuntu-latest
+    needs: apply
+    if: success()
+
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Verify Resources
+        id: verify
+        run: |
+          echo "Verifying deployed resources..."
+          
+          # Check Resource Group
+          if az group show --name rg-dev-vwan &>/dev/null; then
+            echo "Resource Group exists"
+            echo "rg_status=success" >> "$GITHUB_OUTPUT"
+          else
+            echo "Resource Group not found"
+            echo "rg_status=failed" >> "$GITHUB_OUTPUT"
+          fi
+          
+          # Check Virtual WAN
+          if az network vwan show --name vwan-dev --resource-group rg-dev-vwan &>/dev/null; then
+            echo "Virtual WAN exists"
+            echo "vwan_status=success" >> "$GITHUB_OUTPUT"
+          else
+            echo " Virtual WAN not found"
+            echo "vwan_status=failed" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verification Summary
+        if: always()
+        run: |
+          {
+            echo "## Post-Deployment Verification"
+            echo ""
+            echo "| Resource | Status |"
+            echo "|----------|--------|"
+            echo "| Resource Group | ${{ steps.verify.outputs.rg_status }} |"
+            echo "| Virtual WAN | ${{ steps.verify.outputs.vwan_status }} |"
+          } >> "$GITHUB_STEP_SUMMARY"

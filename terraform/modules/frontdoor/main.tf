@@ -62,7 +62,7 @@ resource "azurerm_cdn_frontdoor_origin" "appgw_westeu" {
 
   enabled                        = true
   host_name                      = "placeholder"
-  origin_host_header             =  "placeholder"
+  origin_host_header             = "placeholder"
   http_port                      = 80
   https_port                     = 443
   priority                       = 1

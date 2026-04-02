@@ -1,6 +1,6 @@
 terraform {
   required_version = ">= 1.7.0"
-  
+
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -100,7 +100,7 @@ module "firewall_eastus" {
 module "routing_intent_eastus" {
   source              = "../../modules/routing-intent"
   virtual_hub_id      = module.vhub_eastus.vhub_id
-  firewall_id = module.firewall_eastus.firewall_id
+  firewall_id         = module.firewall_eastus.firewall_id
   resource_group_name = azurerm_resource_group.main.name
 }
 
