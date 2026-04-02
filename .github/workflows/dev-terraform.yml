@@ -113,9 +113,11 @@ jobs:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          TF_VAR_admin_password: ${{ secrets.ADMIN_PASSWORD }}
         run: |
           export exitcode=0
           terraform plan \
+            -input=false \
             -detailed-exitcode \
             -out=tfplan \
             || export exitcode=$?
@@ -199,7 +201,8 @@ jobs:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        run: terraform apply -auto-approve tfplan
+          TF_VAR_admin_password: ${{ secrets.ADMIN_PASSWORD }}
+        run: terraform apply -input=false -auto-approve tfplan
 
       - name: Terraform Output
         working-directory: ${{ env.WORKING_DIR }}
