@@ -78,7 +78,7 @@ variable "spoke_westeu_address_space" {
 }
 
 # ============================================================================
-# VM (✅ FIXED — SSH ONLY)
+# VM
 # ============================================================================
 
 variable "vm_admin_username" {
@@ -91,7 +91,6 @@ variable "ssh_public_key" {
   type        = string
 }
 
-# ❌ REMOVED (NOT NEEDED ANYMORE)
 # variable "vm_admin_password"
 
 # ============================================================================
