@@ -129,12 +129,12 @@ Cost-aware architecture decisions
 docs/FinOps.md
 docs/COST_ANALYSIS.md
 
-Important Notes:
+Important Notes.
 Backend workloads are private (no public exposure)
 Azure Firewall is deployed in hub (not inline by default)
 Traffic routing via firewall depends on routing configuration
 
- Next Steps
+ Next Steps:
 
 Planned improvements:
  End-to-end TLS with Azure Key Vault
