@@ -113,11 +113,16 @@ jobs:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+          #  REQUIRED SECRETS
           TF_VAR_admin_password: ${{ secrets.ADMIN_PASSWORD }}
+          TF_VAR_ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+
         run: |
           export exitcode=0
           terraform plan \
             -var-file="terraform.tfvars" \
+            -compact-warnings \
             -input=false \
             -lock-timeout=5m \
             -detailed-exitcode \
@@ -127,7 +132,7 @@ jobs:
           echo "exitcode=$exitcode" >> $GITHUB_OUTPUT
 
           if [ $exitcode -eq 1 ]; then
-            echo "Plan failed"
+            echo " Plan failed"
             exit 1
           fi
 
@@ -203,7 +208,11 @@ jobs:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+          #  REQUIRED SECRETS
           TF_VAR_admin_password: ${{ secrets.ADMIN_PASSWORD }}
+          TF_VAR_ssh_public_key: ${{ secrets.SSH_PUBLIC_KEY }}
+
         run: terraform apply -input=false -auto-approve -lock-timeout=5m tfplan
 
       - name: Terraform Output
