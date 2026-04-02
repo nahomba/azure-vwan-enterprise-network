@@ -105,6 +105,7 @@ variable "appgateway_name" {
 
 variable "ssl_cert_password" {
   type      = string
+  default   = null
   sensitive = true
 }
 
@@ -120,4 +121,12 @@ variable "log_analytics_name" {
 variable "admin_email" {
   type    = string
   default = "admin@example.com"
+}
+
+variable "primary_location" {
+  type = string
+}
+
+variable "frontdoor_name" {
+  type = string
 }
