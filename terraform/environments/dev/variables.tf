@@ -99,14 +99,13 @@ variable "vpn_shared_key" {
 }
 
 variable "ssl_cert_path" {
-  description = "Path to SSL certificate"
-  type        = string
+  type    = string
+  default = ""
 }
 
 variable "ssl_cert_password" {
-  description = "SSL certificate password"
-  type        = string
-  sensitive   = true
+  type    = string
+  default = ""
 }
 
 variable "enable_westeu" {
@@ -158,4 +157,19 @@ variable "tags" {
 variable "ssh_public_key" {
   description = "SSH public key"
   type        = string
+}
+
+variable "spoke_dev_name" {
+  type = string
+}
+
+variable "spoke_dev_address_space" {
+  type = list(string)
+}
+
+variable "spoke_dev_subnets" {
+  type = map(object({
+    name             = string
+    address_prefixes = list(string)
+  }))
 }

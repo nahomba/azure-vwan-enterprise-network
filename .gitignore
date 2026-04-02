@@ -6,3 +6,4 @@
 *.tfstate
 *.tfstate.*
 bin/
+azure-secrets.txt

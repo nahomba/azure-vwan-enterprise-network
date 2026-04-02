@@ -1,0 +1,1214 @@
+Terraform Validation	Set up job	﻿2026-04-02T07:16:21.0682339Z Current runner version: '2.333.1'
+Terraform Validation	Set up job	2026-04-02T07:16:21.0708851Z ##[group]Runner Image Provisioner
+Terraform Validation	Set up job	2026-04-02T07:16:21.0709765Z Hosted Compute Agent
+Terraform Validation	Set up job	2026-04-02T07:16:21.0710281Z Version: 20260213.493
+Terraform Validation	Set up job	2026-04-02T07:16:21.0711192Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Terraform Validation	Set up job	2026-04-02T07:16:21.0711896Z Build Date: 2026-02-13T00:28:41Z
+Terraform Validation	Set up job	2026-04-02T07:16:21.0712643Z Worker ID: {bb7277ee-4252-4459-9474-6cd9b303152d}
+Terraform Validation	Set up job	2026-04-02T07:16:21.0713354Z Azure Region: northcentralus
+Terraform Validation	Set up job	2026-04-02T07:16:21.0713937Z ##[endgroup]
+Terraform Validation	Set up job	2026-04-02T07:16:21.0715472Z ##[group]Operating System
+Terraform Validation	Set up job	2026-04-02T07:16:21.0716042Z Ubuntu
+Terraform Validation	Set up job	2026-04-02T07:16:21.0716624Z 24.04.4
+Terraform Validation	Set up job	2026-04-02T07:16:21.0717078Z LTS
+Terraform Validation	Set up job	2026-04-02T07:16:21.0717558Z ##[endgroup]
+Terraform Validation	Set up job	2026-04-02T07:16:21.0718009Z ##[group]Runner Image
+Terraform Validation	Set up job	2026-04-02T07:16:21.0718679Z Image: ubuntu-24.04
+Terraform Validation	Set up job	2026-04-02T07:16:21.0719236Z Version: 20260323.65.1
+Terraform Validation	Set up job	2026-04-02T07:16:21.0720205Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+Terraform Validation	Set up job	2026-04-02T07:16:21.0722881Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+Terraform Validation	Set up job	2026-04-02T07:16:21.0724310Z ##[endgroup]
+Terraform Validation	Set up job	2026-04-02T07:16:21.0725913Z ##[group]GITHUB_TOKEN Permissions
+Terraform Validation	Set up job	2026-04-02T07:16:21.0728079Z Contents: read
+Terraform Validation	Set up job	2026-04-02T07:16:21.0728724Z Metadata: read
+Terraform Validation	Set up job	2026-04-02T07:16:21.0729297Z SecurityEvents: write
+Terraform Validation	Set up job	2026-04-02T07:16:21.0729814Z ##[endgroup]
+Terraform Validation	Set up job	2026-04-02T07:16:21.0732730Z Secret source: Actions
+Terraform Validation	Set up job	2026-04-02T07:16:21.0733441Z Prepare workflow directory
+Terraform Validation	Set up job	2026-04-02T07:16:21.1118022Z Prepare all required actions
+Terraform Validation	Set up job	2026-04-02T07:16:21.1156858Z Getting action download info
+Terraform Validation	Set up job	2026-04-02T07:16:21.4652462Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Terraform Validation	Set up job	2026-04-02T07:16:21.6185010Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+Terraform Validation	Set up job	2026-04-02T07:16:22.1383237Z Complete job name: Terraform Validation
+Terraform Validation	Run actions/checkout@v4	﻿2026-04-02T07:16:22.2086611Z ##[group]Run actions/checkout@v4
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2087499Z with:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2087995Z   repository: nahomba/azure-vwan-enterprise-network
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2088823Z   token: ***
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2089245Z   ssh-strict: true
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2089663Z   ssh-user: git
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2090103Z   persist-credentials: true
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2090773Z   clean: true
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2091199Z   sparse-checkout-cone-mode: true
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2091692Z   fetch-depth: 1
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2092110Z   fetch-tags: false
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2092528Z   show-progress: true
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2092983Z   lfs: false
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2093380Z   submodules: false
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2093803Z   set-safe-directory: true
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2094450Z env:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2094833Z   TF_VERSION: 1.7.0
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2095287Z   WORKING_DIR: terraform/environments/dev
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.2095817Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3185955Z Syncing repository: nahomba/azure-vwan-enterprise-network
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3187963Z ##[group]Getting Git version info
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3188972Z Working directory is '/home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network'
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3190221Z [command]/usr/bin/git version
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3233444Z git version 2.53.0
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3257505Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3278821Z Temporarily overriding HOME='/home/runner/work/_temp/020a8c6c-9094-4bed-9c3a-7752dbf57116' before making global git config changes
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3281597Z Adding repository directory to the temporary git global config as a safe directory
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3285830Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3319067Z Deleting the contents of '/home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network'
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3323114Z ##[group]Initializing the repository
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3328383Z [command]/usr/bin/git init /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3389095Z hint: Using 'master' as the name for the initial branch. This default branch name
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3391170Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3392803Z hint: to use in all of your new repositories, which will suppress this warning,
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3394084Z hint: call:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3394721Z hint:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3395591Z hint: 	git config --global init.defaultBranch <name>
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3396620Z hint:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3397580Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3399151Z hint: 'development'. The just-created branch can be renamed via this command:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3400766Z hint:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3401482Z hint: 	git branch -m <name>
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3402264Z hint:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3403329Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3405542Z Initialized empty Git repository in /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network/.git/
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3409089Z [command]/usr/bin/git remote add origin https://github.com/nahomba/azure-vwan-enterprise-network
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3434805Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3436063Z ##[group]Disabling automatic garbage collection
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3439764Z [command]/usr/bin/git config --local gc.auto 0
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3469136Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3470314Z ##[group]Setting up auth
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3476912Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3507060Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3792442Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.3822245Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.4049651Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.4079668Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.4310775Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.4346633Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.4347902Z ##[group]Fetching the repository
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.4356486Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b0756c3cea021e8fc6a60e4955099389fda46fe6:refs/remotes/origin/main
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6745236Z From https://github.com/nahomba/azure-vwan-enterprise-network
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6746899Z  * [new ref]         b0756c3cea021e8fc6a60e4955099389fda46fe6 -> origin/main
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6775487Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6776641Z ##[group]Determining the checkout info
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6778311Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6784313Z [command]/usr/bin/git sparse-checkout disable
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6823185Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6850760Z ##[group]Checking out the ref
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6854047Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6935389Z Switched to a new branch 'main'
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6937936Z branch 'main' set up to track 'origin/main'.
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6944669Z ##[endgroup]
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.6978916Z [command]/usr/bin/git log -1 --format=%H
+Terraform Validation	Run actions/checkout@v4	2026-04-02T07:16:22.7002191Z b0756c3cea021e8fc6a60e4955099389fda46fe6
+Terraform Validation	Run hashicorp/setup-terraform@v3	﻿2026-04-02T07:16:22.7207915Z ##[group]Run hashicorp/setup-terraform@v3
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7208673Z with:
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7209063Z   terraform_version: 1.7.0
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7209528Z   terraform_wrapper: false
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7210053Z   cli_config_credentials_hostname: app.terraform.io
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7210896Z env:
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7211259Z   TF_VERSION: 1.7.0
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7211795Z   WORKING_DIR: terraform/environments/dev
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:22.7212329Z ##[endgroup]
+Terraform Validation	Run hashicorp/setup-terraform@v3	2026-04-02T07:16:23.1679645Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/15542ec0-ad44-4cda-a728-95eecec93d36
+Terraform Validation	Terraform Format Check	﻿2026-04-02T07:16:23.7852700Z ##[group]Run terraform fmt -check -recursive
+Terraform Validation	Terraform Format Check	2026-04-02T07:16:23.7854255Z [36;1mterraform fmt -check -recursive[0m
+Terraform Validation	Terraform Format Check	2026-04-02T07:16:23.7892152Z shell: /usr/bin/bash -e {0}
+Terraform Validation	Terraform Format Check	2026-04-02T07:16:23.7893271Z env:
+Terraform Validation	Terraform Format Check	2026-04-02T07:16:23.7894135Z   TF_VERSION: 1.7.0
+Terraform Validation	Terraform Format Check	2026-04-02T07:16:23.7895132Z   WORKING_DIR: terraform/environments/dev
+Terraform Validation	Terraform Format Check	2026-04-02T07:16:23.7896325Z ##[endgroup]
+Terraform Validation	Terraform Init (no backend)	﻿2026-04-02T07:16:23.8774607Z ##[group]Run terraform init -backend=false
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.8775960Z [36;1mterraform init -backend=false[0m
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.8807824Z shell: /usr/bin/bash -e {0}
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.8808779Z env:
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.8809525Z   TF_VERSION: 1.7.0
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.8810429Z   WORKING_DIR: terraform/environments/dev
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.8811767Z ##[endgroup]
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9177674Z [0m[1mInitializing modules...[0m
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9182261Z - appgateway_dev in ../../modules/appgateway
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9190279Z - firewall_eastus in ../../modules/firewall
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9195339Z - monitoring in ../../modules/monitoring
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9198199Z - routing_intent_eastus in ../../modules/routing-intent
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9202537Z - spoke_dev in ../../modules/spoke
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9206481Z - vhub_eastus in ../../modules/vhub
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9211038Z - vm_dev in ../../modules/vm
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9213950Z - vwan in ../../modules/vwan
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9229500Z 
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9231085Z [0m[1mInitializing provider plugins...[0m
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:23.9234538Z - Finding hashicorp/azurerm versions matching "~> 3.0"...
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:24.0624026Z - Installing hashicorp/azurerm v3.117.1...
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5273402Z - Installed hashicorp/azurerm v3.117.1 (signed by HashiCorp)
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5274169Z 
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5274908Z Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5275739Z selections it made above. Include this file in your version control repository
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5276563Z so that Terraform can guarantee to make the same selections by default when
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5277137Z you run "terraform init" in the future.[0m
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5277344Z 
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5277618Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5277993Z [0m[32m
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5278313Z You may now begin working with Terraform. Try running "terraform plan" to see
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5278855Z any changes that are required for your infrastructure. All Terraform commands
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5279244Z should now work.
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5279368Z 
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5279564Z If you ever set or change modules or backend configuration for Terraform,
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5280076Z rerun this command to reinitialize your working directory. If you forget, other
+Terraform Validation	Terraform Init (no backend)	2026-04-02T07:16:25.5280974Z commands will detect it and remind you to do so if necessary.[0m
+Terraform Validation	Terraform Validate	﻿2026-04-02T07:16:25.5327233Z ##[group]Run terraform validate
+Terraform Validation	Terraform Validate	2026-04-02T07:16:25.5327552Z [36;1mterraform validate[0m
+Terraform Validation	Terraform Validate	2026-04-02T07:16:25.5355912Z shell: /usr/bin/bash -e {0}
+Terraform Validation	Terraform Validate	2026-04-02T07:16:25.5356162Z env:
+Terraform Validation	Terraform Validate	2026-04-02T07:16:25.5356352Z   TF_VERSION: 1.7.0
+Terraform Validation	Terraform Validate	2026-04-02T07:16:25.5426008Z   WORKING_DIR: terraform/environments/dev
+Terraform Validation	Terraform Validate	2026-04-02T07:16:25.5426350Z ##[endgroup]
+Terraform Validation	Terraform Validate	2026-04-02T07:16:26.1634699Z [32m[1mSuccess![0m The configuration is valid.
+Terraform Validation	Terraform Validate	2026-04-02T07:16:26.1638377Z [0m
+Terraform Validation	Validation Summary	﻿2026-04-02T07:16:26.1704174Z ##[group]Run {
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1704525Z [36;1m{[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1704832Z [36;1m  echo "## Validation Results"[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1705492Z [36;1m  echo ""[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1705849Z [36;1m  echo "| Check | Status |"[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1706229Z [36;1m  echo "|-------|--------|"[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1706612Z [36;1m  echo "| Format | success |"[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1707025Z [36;1m  echo "| Validate | success |"[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1707456Z [36;1m} >> "$GITHUB_STEP_SUMMARY"[0m
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1741337Z shell: /usr/bin/bash -e {0}
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1741716Z env:
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1741982Z   TF_VERSION: 1.7.0
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1742328Z   WORKING_DIR: terraform/environments/dev
+Terraform Validation	Validation Summary	2026-04-02T07:16:26.1742727Z ##[endgroup]
+Terraform Validation	Post Run actions/checkout@v4	﻿2026-04-02T07:16:26.2223864Z Post job cleanup.
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3208170Z [command]/usr/bin/git version
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3251245Z git version 2.53.0
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3290048Z Temporarily overriding HOME='/home/runner/work/_temp/5c864463-b2d5-4f58-a035-a9a748f2b5e7' before making global git config changes
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3292830Z Adding repository directory to the temporary git global config as a safe directory
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3305134Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3341308Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3376211Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3625346Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3647968Z http.https://github.com/.extraheader
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.3661030Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.4673049Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.4935288Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Terraform Validation	Post Run actions/checkout@v4	2026-04-02T07:16:26.4972725Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Terraform Validation	Complete job	﻿2026-04-02T07:16:26.5351696Z Cleaning up orphan processes
+Terraform Validation	Complete job	2026-04-02T07:16:26.5621337Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, hashicorp/setup-terraform@v3. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Checkov Security Scan	Set up job	﻿2026-04-02T07:16:31.3032774Z Current runner version: '2.333.1'
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3057298Z ##[group]Runner Image Provisioner
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3058224Z Hosted Compute Agent
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3058749Z Version: 20260213.493
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3059362Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3060030Z Build Date: 2026-02-13T00:28:41Z
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3060780Z Worker ID: {f2d7ad8f-ba07-4a16-bf3c-409073b2ede5}
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3061471Z Azure Region: northcentralus
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3062081Z ##[endgroup]
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3063457Z ##[group]Operating System
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3064531Z Ubuntu
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3065014Z 24.04.4
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3065553Z LTS
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3066015Z ##[endgroup]
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3066511Z ##[group]Runner Image
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3067101Z Image: ubuntu-24.04
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3067570Z Version: 20260323.65.1
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3068637Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260323.65/images/ubuntu/Ubuntu2404-Readme.md
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3070628Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260323.65
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3071681Z ##[endgroup]
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3072903Z ##[group]GITHUB_TOKEN Permissions
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3075112Z Contents: read
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3075748Z Metadata: read
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3076249Z SecurityEvents: write
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3076827Z ##[endgroup]
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3078833Z Secret source: Actions
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3079525Z Prepare workflow directory
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3480526Z Prepare all required actions
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.3518033Z Getting action download info
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.7253182Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Checkov Security Scan	Set up job	2026-04-02T07:16:31.8570212Z Download action repository 'bridgecrewio/checkov-action@master' (SHA:0ce65fae06c148e349f955c3c35ad049c11e838c)
+Checkov Security Scan	Set up job	2026-04-02T07:16:32.2200896Z Download action repository 'github/codeql-action@v3' (SHA:5c8a8a642e79153f5d047b10ec1cba1d1cc65699)
+Checkov Security Scan	Set up job	2026-04-02T07:16:33.2582008Z Complete job name: Checkov Security Scan
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	﻿2026-04-02T07:16:33.3077107Z ##[group]Pull down action image 'ghcr.io/bridgecrewio/checkov:3.2.513'
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.3170374Z ##[command]/usr/bin/docker pull ghcr.io/bridgecrewio/checkov:3.2.513
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.7704155Z 3.2.513: Pulling from bridgecrewio/checkov
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8665526Z ec781dee3f47: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8665993Z 6944007a5b45: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8666294Z e35b92e2619d: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8666597Z 7524aba74b8c: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8666897Z 81e642e739ec: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8667182Z 16436348d632: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8667467Z 504892f9a434: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8667749Z 5b2ff4daa238: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8668046Z ab71441389ea: Pulling fs layer
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8668323Z 81e642e739ec: Waiting
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8668567Z 16436348d632: Waiting
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8668821Z 504892f9a434: Waiting
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8669083Z 5b2ff4daa238: Waiting
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8669343Z ab71441389ea: Waiting
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.8669625Z 7524aba74b8c: Waiting
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.9873431Z 6944007a5b45: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:33.9877048Z 6944007a5b45: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.0105720Z e35b92e2619d: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.0107471Z e35b92e2619d: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.0515480Z ec781dee3f47: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.0516184Z ec781dee3f47: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.0764784Z 7524aba74b8c: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.0766684Z 7524aba74b8c: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.1827075Z 504892f9a434: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.1834643Z 504892f9a434: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.2898632Z 5b2ff4daa238: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.2900957Z 5b2ff4daa238: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.3976615Z 81e642e739ec: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.3977911Z 81e642e739ec: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.4399656Z 16436348d632: Verifying Checksum
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.4408667Z 16436348d632: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:34.4435910Z ab71441389ea: Download complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:35.2275786Z ec781dee3f47: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:38.6525944Z 6944007a5b45: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:39.4052675Z e35b92e2619d: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:39.4200827Z 7524aba74b8c: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:41.5966797Z 81e642e739ec: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5415758Z 16436348d632: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5540506Z 504892f9a434: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5639240Z 5b2ff4daa238: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5726360Z ab71441389ea: Pull complete
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5767545Z Digest: sha256:537c536c763883bba568fa4218c7c9d0073098d649e91156f0ace3babdb525c9
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5794718Z Status: Downloaded newer image for ghcr.io/bridgecrewio/checkov:3.2.513
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5802597Z ghcr.io/bridgecrewio/checkov:3.2.513
+Checkov Security Scan	Pull ghcr.io/bridgecrewio/checkov:3.2.513	2026-04-02T07:16:46.5824873Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	﻿2026-04-02T07:16:46.6095972Z ##[group]Run actions/checkout@v4
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6096536Z with:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6096811Z   repository: nahomba/azure-vwan-enterprise-network
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6097253Z   token: ***
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6097655Z   ssh-strict: true
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6098050Z   ssh-user: git
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6098389Z   persist-credentials: true
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6098637Z   clean: true
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6098825Z   sparse-checkout-cone-mode: true
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6099048Z   fetch-depth: 1
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6099225Z   fetch-tags: false
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6099410Z   show-progress: true
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6099601Z   lfs: false
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6099758Z   submodules: false
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6099946Z   set-safe-directory: true
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6100376Z env:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6100579Z   TF_VERSION: 1.7.0
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6100807Z   WORKING_DIR: terraform/environments/dev
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.6101060Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7198945Z Syncing repository: nahomba/azure-vwan-enterprise-network
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7200699Z ##[group]Getting Git version info
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7201247Z Working directory is '/home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network'
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7201935Z [command]/usr/bin/git version
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7270504Z git version 2.53.0
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7297432Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7320732Z Temporarily overriding HOME='/home/runner/work/_temp/3be0437f-28f0-42d5-929d-7e86b6732175' before making global git config changes
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7322095Z Adding repository directory to the temporary git global config as a safe directory
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7327942Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7361550Z Deleting the contents of '/home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network'
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7365328Z ##[group]Initializing the repository
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7370174Z [command]/usr/bin/git init /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7474329Z hint: Using 'master' as the name for the initial branch. This default branch name
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7475756Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7477204Z hint: to use in all of your new repositories, which will suppress this warning,
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7477805Z hint: call:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7478044Z hint:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7478367Z hint: 	git config --global init.defaultBranch <name>
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7478723Z hint:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7479006Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7479485Z hint: 'development'. The just-created branch can be renamed via this command:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7479837Z hint:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7480012Z hint: 	git branch -m <name>
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7480232Z hint:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7480536Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7481651Z Initialized empty Git repository in /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network/.git/
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7487677Z [command]/usr/bin/git remote add origin https://github.com/nahomba/azure-vwan-enterprise-network
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7517248Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7517839Z ##[group]Disabling automatic garbage collection
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7521710Z [command]/usr/bin/git config --local gc.auto 0
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7549302Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7549866Z ##[group]Setting up auth
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7556356Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7585096Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7881322Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.7910530Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.8133140Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.8163536Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.8384601Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.8417632Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.8426116Z ##[group]Fetching the repository
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:46.8427069Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b0756c3cea021e8fc6a60e4955099389fda46fe6:refs/remotes/origin/main
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0732576Z From https://github.com/nahomba/azure-vwan-enterprise-network
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0734895Z  * [new ref]         b0756c3cea021e8fc6a60e4955099389fda46fe6 -> origin/main
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0761287Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0761925Z ##[group]Determining the checkout info
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0764390Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0769989Z [command]/usr/bin/git sparse-checkout disable
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0808853Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0834898Z ##[group]Checking out the ref
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0839372Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0924489Z Switched to a new branch 'main'
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0927482Z branch 'main' set up to track 'origin/main'.
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0933345Z ##[endgroup]
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0969958Z [command]/usr/bin/git log -1 --format=%H
+Checkov Security Scan	Run actions/checkout@v4	2026-04-02T07:16:47.0992754Z b0756c3cea021e8fc6a60e4955099389fda46fe6
+Checkov Security Scan	Run Checkov	﻿2026-04-02T07:16:47.1376896Z ##[group]Run bridgecrewio/checkov-action@master
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1377234Z with:
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1377431Z   directory: terraform/environments/dev
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1377675Z   framework: terraform
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1377879Z   output_format: cli,sarif
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1378132Z   output_file_path: console,checkov-results.sarif
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1378406Z   soft_fail: false
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1378594Z   download_external_modules: true
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1378819Z   log_level: WARNING
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1378998Z   container_user: 0
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1379227Z env:
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1379379Z   TF_VERSION: 1.7.0
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1379580Z   WORKING_DIR: terraform/environments/dev
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1379823Z ##[endgroup]
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.1545077Z ##[command]/usr/bin/docker run --name ghcriobridgecrewiocheckov32513_db2aad --label 7a5804 --workdir /github/workspace --rm -e "TF_VERSION" -e "WORKING_DIR" -e "INPUT_DIRECTORY" -e "INPUT_FRAMEWORK" -e "INPUT_OUTPUT_FORMAT" -e "INPUT_OUTPUT_FILE_PATH" -e "INPUT_SOFT_FAIL" -e "INPUT_DOWNLOAD_EXTERNAL_MODULES" -e "INPUT_FILE" -e "INPUT_CHECK" -e "INPUT_SKIP_CHECK" -e "INPUT_COMPACT" -e "INPUT_QUIET" -e "INPUT_API-KEY" -e "INPUT_OUTPUT_BC_IDS" -e "INPUT_USE_ENFORCEMENT_RULES" -e "INPUT_SKIP_RESULTS_UPLOAD" -e "INPUT_SKIP_FRAMEWORK" -e "INPUT_EXTERNAL_CHECKS_DIRS" -e "INPUT_EXTERNAL_CHECKS_REPOS" -e "INPUT_ENABLE_SECRETS_SCAN_ALL_FILES" -e "INPUT_LOG_LEVEL" -e "INPUT_CONFIG_FILE" -e "INPUT_BASELINE" -e "INPUT_SOFT_FAIL_ON" -e "INPUT_HARD_FAIL_ON" -e "INPUT_CONTAINER_USER" -e "INPUT_DOCKER_IMAGE" -e "INPUT_DOCKERFILE_PATH" -e "INPUT_VAR_FILE" -e "INPUT_GITHUB_PAT" -e "INPUT_TFC_TOKEN" -e "INPUT_TF_REGISTRY_TOKEN" -e "INPUT_CKV_VALIDATE_SECRETS" -e "INPUT_VCS_BASE_URL" -e "INPUT_VCS_USERNAME" -e "INPUT_VCS_TOKEN" -e "INPUT_BITBUCKET_TOKEN" -e "INPUT_BITBUCKET_APP_PASSWORD" -e "INPUT_BITBUCKET_USERNAME" -e "INPUT_REPO_ROOT_FOR_PLAN_ENRICHMENT" -e "INPUT_DEEP_ANALYSIS" -e "INPUT_POLICY_METADATA_FILTER" -e "INPUT_POLICY_METADATA_FILTER_EXCEPTION" -e "INPUT_SKIP_PATH" -e "INPUT_SKIP_CVE_PACKAGE" -e "INPUT_SKIP_DOWNLOAD" -e "INPUT_PRISMA-API-URL" -e "API_KEY_VARIABLE" -e "GITHUB_PAT" -e "TFC_TOKEN" -e "TF_REGISTRY_TOKEN" -e "VCS_USERNAME" -e "VCS_BASE_URL" -e "VCS_TOKEN" -e "BITBUCKET_TOKEN" -e "BITBUCKET_USERNAME" -e "BITBUCKET_APP_PASSWORD" -e "PRISMA_API_URL" -e "CKV_VALIDATE_SECRETS" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_ID_TOKEN_REQUEST_URL" -e "ACTIONS_ID_TOKEN_REQUEST_TOKEN" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network":"/github/workspace" ghcr.io/bridgecrewio/checkov:3.2.513  "" "terraform/environments/dev" "" "" "" "" "false" "" "" "" "terraform" "" "" "" "cli,sarif" "console,checkov-results.sarif" "true" "" "WARNING" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "--user 0"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3314013Z BC_FROM_BRANCH=main
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3314448Z BC_TO_BRANCH=
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3329917Z BC_PR_ID=main
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3331474Z BC_PR_URL=https://github.com/nahomba/azure-vwan-enterprise-network/pull/main
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3333061Z BC_COMMIT_HASH=b0756c3cea021e8fc6a60e4955099389fda46fe6
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3334893Z BC_COMMIT_URL=https://github.com/nahomba/azure-vwan-enterprise-network/commit/b0756c3cea021e8fc6a60e4955099389fda46fe6
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3336019Z BC_AUTHOR_NAME=nahomba
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3336416Z BC_AUTHOR_URL=https://github.com/nahomba
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3336831Z BC_RUN_ID=1
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3337198Z BC_RUN_URL=https://github.com/nahomba/azure-vwan-enterprise-network/actions/runs/23888277973
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3337786Z BC_REPOSITORY_URL=https://github.com/nahomba/azure-vwan-enterprise-network
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3338228Z running checkov on directory: terraform/environments/dev
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:47.3339333Z checkov -d terraform/environments/dev             --output cli --output sarif --output-file-path console,checkov-results.sarif  --download-external-modules true    --framework terraform         
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1038932Z 
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1039462Z        _               _
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1040023Z    ___| |__   ___  ___| | _______   __
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1040423Z   / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1040818Z  | (__| | | |  __/ (__|   < (_) \ V /
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1041204Z   \___|_| |_|\___|\___|_|\_\___/ \_/
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1041548Z 
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1041762Z By Prisma Cloud | version: 3.2.513 
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1042044Z 
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1042187Z terraform scan results:
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1042425Z 
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1042655Z Passed checks: 15, Failed checks: 0, Skipped checks: 2
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1043043Z 
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1051417Z Check: CKV_AZURE_220: "Ensure Firewall policy has IDPS mode as deny"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1052375Z 	PASSED for resource: module.firewall_eastus.azurerm_firewall_policy.fw_policy
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1053062Z 	File: /../../modules/firewall/main.tf:2-22
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1053505Z 	Calling File: /main.tf:89-98
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1054698Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-220
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1055863Z Check: CKV_AZURE_216: "Ensure DenyIntelMode is set to Deny for Azure Firewalls"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1056347Z 	PASSED for resource: module.firewall_eastus.azurerm_firewall.fw
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1056720Z 	File: /../../modules/firewall/main.tf:57-85
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1056984Z 	Calling File: /main.tf:89-98
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1057528Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-216
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1058378Z Check: CKV_AZURE_219: "Ensure Firewall defines a firewall policy"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1058779Z 	PASSED for resource: module.firewall_eastus.azurerm_firewall.fw
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1059133Z 	File: /../../modules/firewall/main.tf:57-85
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1059400Z 	Calling File: /main.tf:89-98
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1059938Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-219
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1060776Z Check: CKV_AZURE_183: "Ensure that VNET uses local DNS addresses"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1061380Z 	PASSED for resource: module.spoke_dev.azurerm_virtual_network.spoke
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1062032Z 	File: /../../modules/spoke/main.tf:2-8
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1062462Z 	Calling File: /main.tf:110-129
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1063475Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-183
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1064775Z Check: CKV_AZURE_182: "Ensure that VNET has at least 2 connected DNS Endpoints"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1065254Z 	PASSED for resource: module.spoke_dev.azurerm_virtual_network.spoke
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1066043Z 	File: /../../modules/spoke/main.tf:2-8
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1066290Z 	Calling File: /main.tf:110-129
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1066860Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-182
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1067583Z Check: CKV_AZURE_118: "Ensure that Network Interfaces disable IP forwarding"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1068018Z 	PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1068367Z 	File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1068603Z 	Calling File: /main.tf:134-144
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1069498Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-disable-ip-forwarding
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1071124Z Check: CKV_AZURE_179: "Ensure VM agent is installed"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1072090Z 	PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1073116Z 	File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1073533Z 	Calling File: /main.tf:134-144
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1074483Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-179
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1075287Z Check: CKV_AZURE_1: "Ensure Azure Instance does not use basic authentication(Use SSH Key Instead)"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1075810Z 	PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1076161Z 	File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1076400Z 	Calling File: /main.tf:134-144
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1076975Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-1
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1077705Z Check: CKV_AZURE_178: "Ensure linux VM enables SSH with keys for secure communication"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1078173Z 	PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1078522Z 	File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1078750Z 	Calling File: /main.tf:134-144
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1079282Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-178
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1079929Z Check: CKV_AZURE_92: "Ensure that Virtual Machines use managed disks"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1080336Z 	PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1080668Z 	File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1080901Z 	Calling File: /main.tf:134-144
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1081556Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-virtual-machines-use-managed-disks
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1083095Z Check: CKV_AZURE_149: "Ensure that Virtual machine does not enable password authentication"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1084320Z 	PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1084945Z 	File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1085446Z 	Calling File: /main.tf:134-144
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1086754Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-azure-virtual-machine-does-not-enable-password-authentication
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1088374Z Check: CKV_AZURE_50: "Ensure Virtual Machine Extensions are not Installed"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1089179Z 	PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1089872Z 	File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1090309Z 	Calling File: /main.tf:134-144
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1091372Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azr-general-14
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1092312Z Check: CKV_AZURE_119: "Ensure that Network Interfaces don't use public IPs"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1093053Z 	PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1094151Z 	File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1095425Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-dont-use-public-ips
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1097299Z Check: CKV_AZURE_120: "Ensure that Application Gateway enables WAF"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1098045Z 	PASSED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1098576Z 	File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1099880Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-application-gateway-enables-waf
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1101266Z Check: CKV2_AZURE_39: "Ensure Azure VM is not configured with public IP and serial console access"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1101792Z 	PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1102135Z 	File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1102911Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-2-39
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1103713Z Check: CKV_AZURE_218: "Ensure Application Gateway defines secure protocols for in transit communication"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1104702Z 	SKIPPED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1105195Z 	Suppress comment: TLS will be enabled later using Key Vault certificates
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1105652Z 	File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1106112Z 	Calling File: /main.tf:149-156
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1106981Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-218
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1108317Z Check: CKV_AZURE_217: "Ensure Azure Application gateways listener that allow connection requests over HTTP"
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1109315Z 	SKIPPED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1111508Z 	Suppress comment: Temporary HTTP for bootstrap - will migrate to HTTPS via Key Vault
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1112308Z 	File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1112775Z 	Calling File: /main.tf:149-156
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1113605Z 	Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-217
+Checkov Security Scan	Run Checkov	2026-04-02T07:16:51.1115183Z Cleaning up terraform/environments/dev/.external_modules directory
+Checkov Security Scan	Upload SARIF Results	﻿2026-04-02T07:16:51.2039093Z ##[group]Run github/codeql-action/upload-sarif@v3
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2039413Z with:
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2039596Z   sarif_file: checkov-results.sarif
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2039845Z   category: checkov-dev
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2040246Z   checkout_path: /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2040823Z   token: ***
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2041010Z   matrix: null
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2041190Z   wait-for-processing: true
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2041411Z env:
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2041563Z   TF_VERSION: 1.7.0
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2041764Z   WORKING_DIR: terraform/environments/dev
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2064103Z   CHECKOV_RESULTS: 
+Checkov Security Scan	Upload SARIF Results	       _               _
+Checkov Security Scan	Upload SARIF Results	   ___| |__   ___  ___| | _______   __
+Checkov Security Scan	Upload SARIF Results	  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+Checkov Security Scan	Upload SARIF Results	 | (__| | | |  __/ (__|   < (_) \ V /
+Checkov Security Scan	Upload SARIF Results	  \___|_| |_|\___|\___|_|\_\___/ \_/
+Checkov Security Scan	Upload SARIF Results	
+Checkov Security Scan	Upload SARIF Results	By Prisma Cloud | version: 3.2.513 
+Checkov Security Scan	Upload SARIF Results	
+Checkov Security Scan	Upload SARIF Results	terraform scan results:
+Checkov Security Scan	Upload SARIF Results	
+Checkov Security Scan	Upload SARIF Results	Passed checks: 15, Failed checks: 0, Skipped checks: 2
+Checkov Security Scan	Upload SARIF Results	
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_220: "Ensure Firewall policy has IDPS mode as deny"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.firewall_eastus.azurerm_firewall_policy.fw_policy
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/firewall/main.tf:2-22
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:89-98
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-220
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_216: "Ensure DenyIntelMode is set to Deny for Azure Firewalls"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.firewall_eastus.azurerm_firewall.fw
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/firewall/main.tf:57-85
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:89-98
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-216
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_219: "Ensure Firewall defines a firewall policy"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.firewall_eastus.azurerm_firewall.fw
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/firewall/main.tf:57-85
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:89-98
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-219
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_183: "Ensure that VNET uses local DNS addresses"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.spoke_dev.azurerm_virtual_network.spoke
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/spoke/main.tf:2-8
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:110-129
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-183
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_182: "Ensure that VNET has at least 2 connected DNS Endpoints"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.spoke_dev.azurerm_virtual_network.spoke
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/spoke/main.tf:2-8
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:110-129
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-182
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_118: "Ensure that Network Interfaces disable IP forwarding"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:134-144
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-disable-ip-forwarding
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_179: "Ensure VM agent is installed"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:134-144
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-179
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_1: "Ensure Azure Instance does not use basic authentication(Use SSH Key Instead)"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:134-144
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-1
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_178: "Ensure linux VM enables SSH with keys for secure communication"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:134-144
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-178
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_92: "Ensure that Virtual Machines use managed disks"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:134-144
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-virtual-machines-use-managed-disks
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_149: "Ensure that Virtual machine does not enable password authentication"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:134-144
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-azure-virtual-machine-does-not-enable-password-authentication
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_50: "Ensure Virtual Machine Extensions are not Installed"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:134-144
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azr-general-14
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_119: "Ensure that Network Interfaces don't use public IPs"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-dont-use-public-ips
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_120: "Ensure that Application Gateway enables WAF"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-application-gateway-enables-waf
+Checkov Security Scan	Upload SARIF Results	Check: CKV2_AZURE_39: "Ensure Azure VM is not configured with public IP and serial console access"
+Checkov Security Scan	Upload SARIF Results		PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-2-39
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_218: "Ensure Application Gateway defines secure protocols for in transit communication"
+Checkov Security Scan	Upload SARIF Results		SKIPPED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Upload SARIF Results		Suppress comment: TLS will be enabled later using Key Vault certificates
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:149-156
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-218
+Checkov Security Scan	Upload SARIF Results	Check: CKV_AZURE_217: "Ensure Azure Application gateways listener that allow connection requests over HTTP"
+Checkov Security Scan	Upload SARIF Results		SKIPPED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Upload SARIF Results		Suppress comment: Temporary HTTP for bootstrap - will migrate to HTTPS via Key Vault
+Checkov Security Scan	Upload SARIF Results		File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Upload SARIF Results		Calling File: /main.tf:149-156
+Checkov Security Scan	Upload SARIF Results		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-217
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.2086866Z ##[endgroup]
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.3846895Z ##[warning]CodeQL Action v3 will be deprecated in December 2026. Please update all occurrences of the CodeQL Action in your workflow files to v4. For more information, see https://github.blog/changelog/2025-10-28-upcoming-deprecation-of-codeql-action-v3/
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.8957814Z Post-processing sarif files: ["checkov-results.sarif"]
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.8961322Z Validating checkov-results.sarif
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.9325545Z Adding fingerprints to SARIF file. See https://docs.github.com/en/code-security/reference/code-scanning/sarif-support-for-code-scanning#data-for-preventing-duplicated-alerts for more information.
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.9440014Z ##[group]Uploading code scanning results
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:51.9544017Z Uploading results
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:52.2026845Z Successfully uploaded results
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:52.2027624Z ##[endgroup]
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:52.2031515Z ##[group]Waiting for processing to finish
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:52.3407909Z Analysis upload status is pending.
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:57.4982813Z Analysis upload status is complete.
+Checkov Security Scan	Upload SARIF Results	2026-04-02T07:16:57.4984250Z ##[endgroup]
+Checkov Security Scan	Security Summary	﻿2026-04-02T07:16:57.6387703Z ##[group]Run {
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6387997Z [36;1m{[0m
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6388208Z [36;1m  echo "##  Security Scan Results"[0m
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6388492Z [36;1m  echo ""[0m
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6388701Z [36;1m  echo "**Status:** success"[0m
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6388951Z [36;1m  echo ""[0m
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6389215Z [36;1m  echo "Review detailed results in the Security tab."[0m
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6389529Z [36;1m} >> "$GITHUB_STEP_SUMMARY"[0m
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6419014Z shell: /usr/bin/bash -e {0}
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6419260Z env:
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6419422Z   TF_VERSION: 1.7.0
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6419637Z   WORKING_DIR: terraform/environments/dev
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6442391Z   CHECKOV_RESULTS: 
+Checkov Security Scan	Security Summary	       _               _
+Checkov Security Scan	Security Summary	   ___| |__   ___  ___| | _______   __
+Checkov Security Scan	Security Summary	  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+Checkov Security Scan	Security Summary	 | (__| | | |  __/ (__|   < (_) \ V /
+Checkov Security Scan	Security Summary	  \___|_| |_|\___|\___|_|\_\___/ \_/
+Checkov Security Scan	Security Summary	
+Checkov Security Scan	Security Summary	By Prisma Cloud | version: 3.2.513 
+Checkov Security Scan	Security Summary	
+Checkov Security Scan	Security Summary	terraform scan results:
+Checkov Security Scan	Security Summary	
+Checkov Security Scan	Security Summary	Passed checks: 15, Failed checks: 0, Skipped checks: 2
+Checkov Security Scan	Security Summary	
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_220: "Ensure Firewall policy has IDPS mode as deny"
+Checkov Security Scan	Security Summary		PASSED for resource: module.firewall_eastus.azurerm_firewall_policy.fw_policy
+Checkov Security Scan	Security Summary		File: /../../modules/firewall/main.tf:2-22
+Checkov Security Scan	Security Summary		Calling File: /main.tf:89-98
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-220
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_216: "Ensure DenyIntelMode is set to Deny for Azure Firewalls"
+Checkov Security Scan	Security Summary		PASSED for resource: module.firewall_eastus.azurerm_firewall.fw
+Checkov Security Scan	Security Summary		File: /../../modules/firewall/main.tf:57-85
+Checkov Security Scan	Security Summary		Calling File: /main.tf:89-98
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-216
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_219: "Ensure Firewall defines a firewall policy"
+Checkov Security Scan	Security Summary		PASSED for resource: module.firewall_eastus.azurerm_firewall.fw
+Checkov Security Scan	Security Summary		File: /../../modules/firewall/main.tf:57-85
+Checkov Security Scan	Security Summary		Calling File: /main.tf:89-98
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-219
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_183: "Ensure that VNET uses local DNS addresses"
+Checkov Security Scan	Security Summary		PASSED for resource: module.spoke_dev.azurerm_virtual_network.spoke
+Checkov Security Scan	Security Summary		File: /../../modules/spoke/main.tf:2-8
+Checkov Security Scan	Security Summary		Calling File: /main.tf:110-129
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-183
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_182: "Ensure that VNET has at least 2 connected DNS Endpoints"
+Checkov Security Scan	Security Summary		PASSED for resource: module.spoke_dev.azurerm_virtual_network.spoke
+Checkov Security Scan	Security Summary		File: /../../modules/spoke/main.tf:2-8
+Checkov Security Scan	Security Summary		Calling File: /main.tf:110-129
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/azr-networking-182
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_118: "Ensure that Network Interfaces disable IP forwarding"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Security Summary		Calling File: /main.tf:134-144
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-disable-ip-forwarding
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_179: "Ensure VM agent is installed"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Security Summary		Calling File: /main.tf:134-144
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-179
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_1: "Ensure Azure Instance does not use basic authentication(Use SSH Key Instead)"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Security Summary		Calling File: /main.tf:134-144
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azr-networking-1
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_178: "Ensure linux VM enables SSH with keys for secure communication"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Security Summary		Calling File: /main.tf:134-144
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/azr-general-178
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_92: "Ensure that Virtual Machines use managed disks"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Security Summary		Calling File: /main.tf:134-144
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-that-virtual-machines-use-managed-disks
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_149: "Ensure that Virtual machine does not enable password authentication"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Security Summary		Calling File: /main.tf:134-144
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/ensure-azure-virtual-machine-does-not-enable-password-authentication
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_50: "Ensure Virtual Machine Extensions are not Installed"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_linux_virtual_machine.vm
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:15-58
+Checkov Security Scan	Security Summary		Calling File: /main.tf:134-144
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azr-general-14
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_119: "Ensure that Network Interfaces don't use public IPs"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-network-interfaces-dont-use-public-ips
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_120: "Ensure that Application Gateway enables WAF"
+Checkov Security Scan	Security Summary		PASSED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Security Summary		File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/ensure-that-application-gateway-enables-waf
+Checkov Security Scan	Security Summary	Check: CKV2_AZURE_39: "Ensure Azure VM is not configured with public IP and serial console access"
+Checkov Security Scan	Security Summary		PASSED for resource: module.vm_dev.azurerm_network_interface.nic
+Checkov Security Scan	Security Summary		File: /../../modules/vm/main.tf:1-13
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-networking-policies/bc-azure-2-39
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_218: "Ensure Application Gateway defines secure protocols for in transit communication"
+Checkov Security Scan	Security Summary		SKIPPED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Security Summary		Suppress comment: TLS will be enabled later using Key Vault certificates
+Checkov Security Scan	Security Summary		File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Security Summary		Calling File: /main.tf:149-156
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-218
+Checkov Security Scan	Security Summary	Check: CKV_AZURE_217: "Ensure Azure Application gateways listener that allow connection requests over HTTP"
+Checkov Security Scan	Security Summary		SKIPPED for resource: module.appgateway_dev.azurerm_application_gateway.main
+Checkov Security Scan	Security Summary		Suppress comment: Temporary HTTP for bootstrap - will migrate to HTTPS via Key Vault
+Checkov Security Scan	Security Summary		File: /../../modules/appgateway/main.tf:5-115
+Checkov Security Scan	Security Summary		Calling File: /main.tf:149-156
+Checkov Security Scan	Security Summary		Guide: https://docs.prismacloud.io/en/enterprise-edition/policy-reference/azure-policies/azure-general-policies/bc-azure-217
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6465496Z   CODEQL_ACTION_FEATURE_MULTI_LANGUAGE: false
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6465772Z   CODEQL_ACTION_FEATURE_SANDWICH: false
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6466043Z   CODEQL_ACTION_FEATURE_SARIF_COMBINE: true
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6466295Z   CODEQL_ACTION_FEATURE_WILL_UPLOAD: true
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6466542Z   CODEQL_ACTION_VERSION: 3.35.1
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6466792Z   CODEQL_ACTION_DID_LOG_VERSION_DEPRECATION: true
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6467159Z   CODEQL_ACTION_ANALYSIS_KEY: .github/workflows/dev-terraform.yml:security
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6467549Z   CODEQL_WORKFLOW_STARTED_AT: 2026-04-02T07:16:51.376Z
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6467935Z   CODEQL_UPLOAD_SARIF_CHECKOV_DEV__CHECKOV: CODEQL_UPLOAD_SARIF_CHECKOV_DEV__CHECKOV
+Checkov Security Scan	Security Summary	2026-04-02T07:16:57.6468304Z ##[endgroup]
+Checkov Security Scan	Post Upload SARIF Results	﻿2026-04-02T07:16:57.6587883Z Post job cleanup.
+Checkov Security Scan	Post Upload SARIF Results	2026-04-02T07:16:57.8925167Z ##[group]Uploading combined SARIF debug artifact
+Checkov Security Scan	Post Upload SARIF Results	2026-04-02T07:16:57.8927636Z ##[endgroup]
+Checkov Security Scan	Post Run actions/checkout@v4	﻿2026-04-02T07:16:57.9074711Z Post job cleanup.
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0021635Z [command]/usr/bin/git version
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0062314Z git version 2.53.0
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0108495Z Temporarily overriding HOME='/home/runner/work/_temp/e1b5774a-1f49-4bc7-9752-3e14933353f8' before making global git config changes
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0110614Z Adding repository directory to the temporary git global config as a safe directory
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0120797Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0161887Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0195732Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0425054Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0445585Z http.https://github.com/.extraheader
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0459024Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0489919Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0710355Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Checkov Security Scan	Post Run actions/checkout@v4	2026-04-02T07:16:58.0742931Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Checkov Security Scan	Complete job	﻿2026-04-02T07:16:58.1080617Z Cleaning up orphan processes
+Checkov Security Scan	Complete job	2026-04-02T07:16:58.1479713Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, github/codeql-action/upload-sarif@v3. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Terraform Plan	Set up job	﻿2026-04-02T07:17:03.3308822Z Current runner version: '2.333.1'
+Terraform Plan	Set up job	2026-04-02T07:17:03.3344837Z ##[group]Runner Image Provisioner
+Terraform Plan	Set up job	2026-04-02T07:17:03.3346148Z Hosted Compute Agent
+Terraform Plan	Set up job	2026-04-02T07:17:03.3347180Z Version: 20260213.493
+Terraform Plan	Set up job	2026-04-02T07:17:03.3348158Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+Terraform Plan	Set up job	2026-04-02T07:17:03.3349292Z Build Date: 2026-02-13T00:28:41Z
+Terraform Plan	Set up job	2026-04-02T07:17:03.3350400Z Worker ID: {e4caa490-1bf9-4a0f-bba8-b054e584c615}
+Terraform Plan	Set up job	2026-04-02T07:17:03.3351497Z Azure Region: eastus2
+Terraform Plan	Set up job	2026-04-02T07:17:03.3352387Z ##[endgroup]
+Terraform Plan	Set up job	2026-04-02T07:17:03.3354488Z ##[group]Operating System
+Terraform Plan	Set up job	2026-04-02T07:17:03.3355457Z Ubuntu
+Terraform Plan	Set up job	2026-04-02T07:17:03.3356793Z 24.04.4
+Terraform Plan	Set up job	2026-04-02T07:17:03.3357651Z LTS
+Terraform Plan	Set up job	2026-04-02T07:17:03.3358458Z ##[endgroup]
+Terraform Plan	Set up job	2026-04-02T07:17:03.3359394Z ##[group]Runner Image
+Terraform Plan	Set up job	2026-04-02T07:17:03.3360305Z Image: ubuntu-24.04
+Terraform Plan	Set up job	2026-04-02T07:17:03.3361106Z Version: 20260329.72.1
+Terraform Plan	Set up job	2026-04-02T07:17:03.3362866Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260329.72/images/ubuntu/Ubuntu2404-Readme.md
+Terraform Plan	Set up job	2026-04-02T07:17:03.3366033Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260329.72
+Terraform Plan	Set up job	2026-04-02T07:17:03.3367604Z ##[endgroup]
+Terraform Plan	Set up job	2026-04-02T07:17:03.3369386Z ##[group]GITHUB_TOKEN Permissions
+Terraform Plan	Set up job	2026-04-02T07:17:03.3372477Z Contents: read
+Terraform Plan	Set up job	2026-04-02T07:17:03.3373368Z Metadata: read
+Terraform Plan	Set up job	2026-04-02T07:17:03.3374498Z SecurityEvents: write
+Terraform Plan	Set up job	2026-04-02T07:17:03.3375386Z ##[endgroup]
+Terraform Plan	Set up job	2026-04-02T07:17:03.3378112Z Secret source: Actions
+Terraform Plan	Set up job	2026-04-02T07:17:03.3379771Z Prepare workflow directory
+Terraform Plan	Set up job	2026-04-02T07:17:03.3904891Z Prepare all required actions
+Terraform Plan	Set up job	2026-04-02T07:17:03.3957930Z Getting action download info
+Terraform Plan	Set up job	2026-04-02T07:17:03.7917981Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+Terraform Plan	Set up job	2026-04-02T07:17:03.8969686Z Download action repository 'azure/login@v2' (SHA:a457da9ea143d694b1b9c7c869ebb04ebe844ef5)
+Terraform Plan	Set up job	2026-04-02T07:17:04.1769162Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+Terraform Plan	Set up job	2026-04-02T07:17:04.4809280Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+Terraform Plan	Set up job	2026-04-02T07:17:04.7438612Z Complete job name: Terraform Plan
+Terraform Plan	Run actions/checkout@v4	﻿2026-04-02T07:17:04.8167648Z ##[group]Run actions/checkout@v4
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8168569Z with:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8169103Z   repository: nahomba/azure-vwan-enterprise-network
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8170077Z   token: ***
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8170526Z   ssh-strict: true
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8170979Z   ssh-user: git
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8171439Z   persist-credentials: true
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8171954Z   clean: true
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8172428Z   sparse-checkout-cone-mode: true
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8172972Z   fetch-depth: 1
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8173446Z   fetch-tags: false
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8173910Z   show-progress: true
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8174687Z   lfs: false
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8175110Z   submodules: false
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8175585Z   set-safe-directory: true
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8176406Z env:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8176823Z   TF_VERSION: 1.7.0
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8177344Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.8177922Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9253589Z Syncing repository: nahomba/azure-vwan-enterprise-network
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9256217Z ##[group]Getting Git version info
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9257373Z Working directory is '/home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network'
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9258703Z [command]/usr/bin/git version
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9296876Z git version 2.53.0
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9321704Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9344939Z Temporarily overriding HOME='/home/runner/work/_temp/01e8f461-074f-49ea-a3c2-a528a8741dfc' before making global git config changes
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9347509Z Adding repository directory to the temporary git global config as a safe directory
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9350944Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9384616Z Deleting the contents of '/home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network'
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9387510Z ##[group]Initializing the repository
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9391734Z [command]/usr/bin/git init /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9475490Z hint: Using 'master' as the name for the initial branch. This default branch name
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9477252Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9478529Z hint: to use in all of your new repositories, which will suppress this warning,
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9479311Z hint: call:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9479733Z hint:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9480300Z hint: 	git config --global init.defaultBranch <name>
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9481069Z hint:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9482041Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9483139Z hint: 'development'. The just-created branch can be renamed via this command:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9483974Z hint:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9484644Z hint: 	git branch -m <name>
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9485234Z hint:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9486025Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9487628Z Initialized empty Git repository in /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network/.git/
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9490044Z [command]/usr/bin/git remote add origin https://github.com/nahomba/azure-vwan-enterprise-network
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9518754Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9519586Z ##[group]Disabling automatic garbage collection
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9522334Z [command]/usr/bin/git config --local gc.auto 0
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9550810Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9551603Z ##[group]Setting up auth
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9557416Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9587087Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9879492Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:04.9908958Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.0139624Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.0172758Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.0407267Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.0442904Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.0444447Z ##[group]Fetching the repository
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.0452712Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b0756c3cea021e8fc6a60e4955099389fda46fe6:refs/remotes/origin/main
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2341795Z From https://github.com/nahomba/azure-vwan-enterprise-network
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2343557Z  * [new ref]         b0756c3cea021e8fc6a60e4955099389fda46fe6 -> origin/main
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2372781Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2374224Z ##[group]Determining the checkout info
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2375584Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2380072Z [command]/usr/bin/git sparse-checkout disable
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2419752Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2448266Z ##[group]Checking out the ref
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2452384Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2533603Z Switched to a new branch 'main'
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2535928Z branch 'main' set up to track 'origin/main'.
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2543581Z ##[endgroup]
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2579224Z [command]/usr/bin/git log -1 --format=%H
+Terraform Plan	Run actions/checkout@v4	2026-04-02T07:17:05.2603132Z b0756c3cea021e8fc6a60e4955099389fda46fe6
+Terraform Plan	Azure Login (OIDC)	﻿2026-04-02T07:17:05.2892202Z ##[group]Run azure/login@v2
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2893305Z with:
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2894668Z   client-id: ***
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2895775Z   tenant-id: ***
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2896943Z   subscription-id: ***
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2897998Z   enable-AzPSSession: false
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2899103Z   environment: azurecloud
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2900203Z   allow-no-subscriptions: false
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2901430Z   audience: api://AzureADTokenExchange
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2902701Z   auth-type: SERVICE_PRINCIPAL
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2903778Z env:
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2904869Z   TF_VERSION: 1.7.0
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2905865Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.2907051Z ##[endgroup]
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:05.3431730Z Running Azure CLI Login.
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.1511224Z [command]/usr/bin/az cloud set -n azurecloud
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.3814929Z Done setting cloud: "azurecloud"
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.4792865Z Federated token details:
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.4793726Z  issuer - https://token.actions.githubusercontent.com
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.4794874Z  subject claim - repo:nahomba/azure-vwan-enterprise-network:ref:refs/heads/main
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.4795689Z  audience - api://AzureADTokenExchange
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.4796686Z  job_workflow_ref - nahomba/azure-vwan-enterprise-network/.github/workflows/dev-terraform.yml@refs/heads/main
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:15.4797748Z Attempting Azure CLI login by using OIDC...
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:16.6986979Z Subscription is set successfully.
+Terraform Plan	Azure Login (OIDC)	2026-04-02T07:17:16.6987753Z Azure CLI login succeeds by using OIDC.
+Terraform Plan	Run hashicorp/setup-terraform@v3	﻿2026-04-02T07:17:16.7104603Z ##[group]Run hashicorp/setup-terraform@v3
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7104961Z with:
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7105214Z   terraform_version: 1.7.0
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7105486Z   terraform_wrapper: false
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7105792Z   cli_config_credentials_hostname: app.terraform.io
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7106156Z env:
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7106363Z   TF_VERSION: 1.7.0
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7106612Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:16.7106903Z ##[endgroup]
+Terraform Plan	Run hashicorp/setup-terraform@v3	2026-04-02T07:17:17.2465670Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/2b8a1dfe-d97f-4399-9474-c9c4401b668a
+Terraform Plan	Break Existing State Lock	﻿2026-04-02T07:17:17.8722669Z ##[group]Run echo "Checking for existing state locks..."
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8723198Z [36;1mecho "Checking for existing state locks..."[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8723635Z [36;1mSTORAGE_KEY=$(az storage account keys list \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8724616Z [36;1m  --resource-group "***" \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8724976Z [36;1m  --account-name "***" \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8725280Z [36;1m  --query '[0].value' -o tsv)[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8725555Z [36;1m[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8725782Z [36;1maz storage blob lease break \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8726112Z [36;1m  --account-name "***" \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8726423Z [36;1m  --container-name tfstate \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8726857Z [36;1m  --blob-name dev.terraform.tfstate \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8727176Z [36;1m  --account-key "$STORAGE_KEY" \[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8727557Z [36;1m  --lease-break-period 0 2>/dev/null || echo "No lock to break"[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8727915Z [36;1m[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8728117Z [36;1msleep 3[0m
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8763239Z shell: /usr/bin/bash -e {0}
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8763534Z env:
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8763739Z   TF_VERSION: 1.7.0
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8764001Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8764601Z ##[endgroup]
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:17.8836867Z Checking for existing state locks...
+Terraform Plan	Break Existing State Lock	2026-04-02T07:17:20.6731429Z No lock to break
+Terraform Plan	Terraform Init	﻿2026-04-02T07:17:23.6784937Z ##[group]Run terraform init \
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6785299Z [36;1mterraform init \[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6785750Z [36;1m  -backend-config="resource_group_name=***" \[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6786200Z [36;1m  -backend-config="storage_account_name=***" \[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6786573Z [36;1m  -backend-config="container_name=tfstate" \[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6787153Z [36;1m  -backend-config="key=dev.terraform.tfstate"[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6815352Z shell: /usr/bin/bash -e {0}
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6815620Z env:
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6815827Z   TF_VERSION: 1.7.0
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6816077Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6816360Z   ARM_USE_OIDC: true
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6816685Z   ARM_CLIENT_ID: ***
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6816955Z   ARM_TENANT_ID: ***
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6817240Z   ARM_SUBSCRIPTION_ID: ***
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.6817478Z ##[endgroup]
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.7217716Z 
+Terraform Plan	Terraform Init	2026-04-02T07:17:23.7219335Z [0m[1mInitializing the backend...[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.0220406Z [0m[32m
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.0221484Z Successfully configured the backend "azurerm"! Terraform will automatically
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6598400Z use this backend unless the backend configuration changes.[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6599150Z [0m[1mInitializing modules...[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6610752Z - appgateway_dev in ../../modules/appgateway
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6619630Z - firewall_eastus in ../../modules/firewall
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6624997Z - monitoring in ../../modules/monitoring
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6631097Z - routing_intent_eastus in ../../modules/routing-intent
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6654429Z - spoke_dev in ../../modules/spoke
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6655137Z - vhub_eastus in ../../modules/vhub
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6656283Z - vm_dev in ../../modules/vm
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6660500Z - vwan in ../../modules/vwan
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6678512Z 
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6679068Z [0m[1mInitializing provider plugins...[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.6679838Z - Finding hashicorp/azurerm versions matching "~> 3.0"...
+Terraform Plan	Terraform Init	2026-04-02T07:17:25.8540838Z - Installing hashicorp/azurerm v3.117.1...
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3801080Z - Installed hashicorp/azurerm v3.117.1 (signed by HashiCorp)
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3802651Z 
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3804016Z Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3805194Z selections it made above. Include this file in your version control repository
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3806014Z so that Terraform can guarantee to make the same selections by default when
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3806620Z you run "terraform init" in the future.[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3806816Z 
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3807174Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3807566Z [0m[32m
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3807893Z You may now begin working with Terraform. Try running "terraform plan" to see
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3808391Z any changes that are required for your infrastructure. All Terraform commands
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3808761Z should now work.
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3808905Z 
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3809114Z If you ever set or change modules or backend configuration for Terraform,
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3809627Z rerun this command to reinitialize your working directory. If you forget, other
+Terraform Plan	Terraform Init	2026-04-02T07:17:27.3810164Z commands will detect it and remind you to do so if necessary.[0m
+Terraform Plan	Terraform Plan	﻿2026-04-02T07:17:27.3854786Z ##[group]Run export exitcode=0
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3855152Z [36;1mexport exitcode=0[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3855417Z [36;1mterraform plan \[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3855685Z [36;1m  -detailed-exitcode \[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3855955Z [36;1m  -no-color \[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3856194Z [36;1m  -out=tfplan \[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3856448Z [36;1m  | tee plan_output.txt \[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3856727Z [36;1m  || export exitcode=$?[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3856993Z [36;1m[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3857250Z [36;1mecho "exitcode=$exitcode" >> "$GITHUB_OUTPUT"[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3857556Z [36;1m[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3857775Z [36;1mif [ "$exitcode" -eq 1 ]; then[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3858067Z [36;1m  echo "Terraform Plan Failed"[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3858335Z [36;1m  exit 1[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3858569Z [36;1melif [ "$exitcode" -eq 2 ]; then[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3858903Z [36;1m  echo "Changes Detected - Approval Required"[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3859395Z [36;1melse[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3859651Z [36;1m  echo "No Changes Detected"[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3859911Z [36;1mfi[0m
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3888992Z shell: /usr/bin/bash -e {0}
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3889270Z env:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3889500Z   TF_VERSION: 1.7.0
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3889755Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3890043Z   ARM_USE_OIDC: true
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3890403Z   ARM_CLIENT_ID: ***
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3890687Z   ARM_TENANT_ID: ***
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3890974Z   ARM_SUBSCRIPTION_ID: ***
+Terraform Plan	Terraform Plan	2026-04-02T07:17:27.3891224Z ##[endgroup]
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2692952Z var.admin_password
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2693444Z   Admin password for VMs
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2693701Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2694230Z   Enter a value: var.alert_email
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2694630Z   Email address for alerts
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2694974Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2695290Z   Enter a value: var.appgw_eastus_name
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2695778Z   Name of the Application Gateway in East US
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2696177Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2696368Z   Enter a value: var.firewall_eastus_name
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2696830Z   Name of the Azure Firewall in East US
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2697114Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2711985Z   Enter a value: var.frontdoor_name
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2712690Z   Name of the Front Door
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2712932Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2713121Z   Enter a value: var.hub_eastus_address_prefix
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2713623Z   Address prefix for the Virtual Hub in East US
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2713950Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2714256Z   Enter a value: var.hub_eastus_name
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2714714Z   Name of the Virtual Hub in East US
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2714986Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2715132Z   Enter a value: var.log_analytics_name
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2715576Z   Name of the Log Analytics workspace
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2715874Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2716039Z   Enter a value: var.resource_group_name
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2716483Z   Name of the resource group
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2716739Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2716896Z   Enter a value: var.ssh_public_key
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2717298Z   SSH public key
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2717490Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2717651Z   Enter a value: var.ssl_cert_password
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2718019Z   SSL certificate password
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2718175Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2718342Z   Enter a value: var.ssl_cert_path
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2718706Z   Path to SSL certificate
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2718855Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2718960Z   Enter a value: var.vwan_name
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2719208Z   Name of the Virtual WAN
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.2719345Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3044314Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3044536Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3044863Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3045008Z   on variables.tf line 7:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3045411Z    7: variable "resource_group_name" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3045650Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3045863Z The root module input variable "resource_group_name" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3046392Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3047130Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3052399Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3052609Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3052889Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3052992Z   on variables.tf line 18:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3053240Z   18: variable "vwan_name" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3053451Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3053728Z The root module input variable "vwan_name" is not set, and has no default
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3054494Z value. Use a -var or -var-file command line argument to provide a value for
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3054867Z this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3061034Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3061247Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3061548Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3061649Z   on variables.tf line 23:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3062014Z   23: variable "hub_eastus_name" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3062189Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3062375Z The root module input variable "hub_eastus_name" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3062962Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3063665Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3068957Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3069151Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3069452Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3069569Z   on variables.tf line 28:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3069843Z   28: variable "hub_eastus_address_prefix" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3070035Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3070402Z The root module input variable "hub_eastus_address_prefix" is not set, and
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3070879Z has no default value. Use a -var or -var-file command line argument to
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3071417Z provide a value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3077647Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3077822Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3078129Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3078281Z   on variables.tf line 45:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3078679Z   45: variable "firewall_eastus_name" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3078973Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3079309Z The root module input variable "firewall_eastus_name" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3079824Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3080194Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3085441Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3085601Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3085892Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3085996Z   on variables.tf line 56:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3086240Z   56: variable "appgw_eastus_name" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3086416Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3086600Z The root module input variable "appgw_eastus_name" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3087050Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3087406Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3111907Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3112150Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3112473Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3112699Z   on variables.tf line 67:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3113099Z   67: variable "frontdoor_name" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3113498Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3113860Z The root module input variable "frontdoor_name" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3115317Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3116224Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3116482Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3116652Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3116945Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3117099Z   on variables.tf line 72:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3117480Z   72: variable "log_analytics_name" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3117748Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3117956Z The root module input variable "log_analytics_name" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3118452Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3118833Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3123062Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3123315Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3123561Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3123664Z   on variables.tf line 77:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3123913Z   77: variable "alert_email" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3124572Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3124772Z The root module input variable "alert_email" is not set, and has no default
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3125262Z value. Use a -var or -var-file command line argument to provide a value for
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3125631Z this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3130420Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3130609Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3130890Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3130990Z   on variables.tf line 88:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3131253Z   88: variable "admin_password" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3131430Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3131613Z The root module input variable "admin_password" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3132074Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3132444Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3137759Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3137956Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3138229Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3138328Z   on variables.tf line 101:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3138787Z  101: variable "ssl_cert_path" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3138961Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3139157Z The root module input variable "ssl_cert_path" is not set, and has no default
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3139631Z value. Use a -var or -var-file command line argument to provide a value for
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3139990Z this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3145079Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3145313Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3145560Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3145661Z   on variables.tf line 106:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3145911Z  106: variable "ssl_cert_password" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3146080Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3146270Z The root module input variable "ssl_cert_password" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3146720Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3147076Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3152507Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3153225Z Error: No value for required variable
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3153559Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3153731Z   on variables.tf line 158:
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3154303Z  158: variable "ssh_public_key" {
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3154574Z 
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3154861Z The root module input variable "ssh_public_key" is not set, and has no
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3155599Z default value. Use a -var or -var-file command line argument to provide a
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3156169Z value for this variable.
+Terraform Plan	Terraform Plan	2026-04-02T07:17:28.3168900Z   Enter a value: No Changes Detected
+Terraform Plan	Upload Plan Artifacts	﻿2026-04-02T07:17:28.3236003Z ##[group]Run actions/upload-artifact@v4
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3236460Z with:
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3236758Z   name: tfplan-dev
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3237192Z   path: terraform/environments/dev/tfplan
+Terraform Plan	Upload Plan Artifacts	terraform/environments/dev/plan_output.txt
+Terraform Plan	Upload Plan Artifacts	
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3237630Z   retention-days: 30
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3237869Z   if-no-files-found: warn
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3238117Z   compression-level: 6
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3238353Z   overwrite: false
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3238583Z   include-hidden-files: false
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3238848Z env:
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3261138Z   TF_VERSION: 1.7.0
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3261462Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.3261763Z ##[endgroup]
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.5394871Z Multiple search paths detected. Calculating the least common ancestor of all paths
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.5406376Z The least common ancestor is /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network/terraform/environments/dev. This will be the root directory of the artifact
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.5407939Z With the provided path, there will be 1 file uploaded
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.5408719Z Artifact name is valid!
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.5409261Z Root directory input is valid!
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.6400994Z Beginning upload of artifact content to blob storage
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.6975158Z Uploaded bytes 453
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.7110772Z Finished uploading artifact content to blob storage!
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.7114356Z SHA256 digest of uploaded artifact zip is d99654d1d5f61607a873807e2f3df7fb3dd0410c05856a02cf4518532aeacf5f
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.7116258Z Finalizing artifact upload
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.8068213Z Artifact tfplan-dev.zip successfully finalized. Artifact ID 6236718625
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.8069386Z Artifact tfplan-dev has been successfully uploaded! Final size is 453 bytes. Artifact ID is 6236718625
+Terraform Plan	Upload Plan Artifacts	2026-04-02T07:17:28.8077165Z Artifact download URL: https://github.com/nahomba/azure-vwan-enterprise-network/actions/runs/23888277973/artifacts/6236718625
+Terraform Plan	Plan Summary	﻿2026-04-02T07:17:28.8181135Z ##[group]Run {
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8181469Z [36;1m{[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8181716Z [36;1m  echo "##  Terraform Plan Summary"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8182023Z [36;1m  echo ""[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8182285Z [36;1m  echo "**Environment:** dev"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8182586Z [36;1m  echo "**Exit Code:** 0"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8182851Z [36;1m  echo ""[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8183072Z [36;1m  [0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8183284Z [36;1m  if [ "0" == "0" ]; then[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8183611Z [36;1m    echo " No infrastructure changes detected"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8184359Z [36;1m  elif [ "0" == "2" ]; then[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8184933Z [36;1m    echo " Infrastructure changes detected - approval required"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8185334Z [36;1m  elif [ "0" == "1" ]; then[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8185667Z [36;1m    echo " Plan failed - check logs for details"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8185987Z [36;1m  fi[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8186195Z [36;1m  [0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8186400Z [36;1m  echo ""[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8186686Z [36;1m  echo "**Triggered by:** @nahomba"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8187068Z [36;1m  echo "**Commit:** b0756c3cea021e8fc6a60e4955099389fda46fe6"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8187439Z [36;1m} >> "$GITHUB_STEP_SUMMARY"[0m
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8215337Z shell: /usr/bin/bash -e {0}
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8215612Z env:
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8215822Z   TF_VERSION: 1.7.0
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8216082Z   WORKING_DIR: terraform/environments/dev
+Terraform Plan	Plan Summary	2026-04-02T07:17:28.8216385Z ##[endgroup]
+Terraform Plan	Post Azure Login (OIDC)	﻿2026-04-02T07:17:28.8336312Z Post job cleanup.
+Terraform Plan	Post Azure Login (OIDC)	2026-04-02T07:17:28.8725001Z Clearing azure cli accounts from the local cache.
+Terraform Plan	Post Azure Login (OIDC)	2026-04-02T07:17:28.8739868Z [command]/usr/bin/az account clear
+Terraform Plan	Post Run actions/checkout@v4	﻿2026-04-02T07:17:29.3957316Z Post job cleanup.
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.4921832Z [command]/usr/bin/git version
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.4958083Z git version 2.53.0
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.4999275Z Temporarily overriding HOME='/home/runner/work/_temp/68dac6fc-d4c7-45dc-9bd6-6c20706b2b80' before making global git config changes
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5000516Z Adding repository directory to the temporary git global config as a safe directory
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5012665Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/azure-vwan-enterprise-network/azure-vwan-enterprise-network
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5047486Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5080963Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5315796Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5336912Z http.https://github.com/.extraheader
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5349132Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5383249Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5634536Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Terraform Plan	Post Run actions/checkout@v4	2026-04-02T07:17:29.5673093Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Terraform Plan	Complete job	﻿2026-04-02T07:17:29.6040048Z Evaluate and set job outputs
+Terraform Plan	Complete job	2026-04-02T07:17:29.6045851Z Set output 'exitcode'
+Terraform Plan	Complete job	2026-04-02T07:17:29.6047688Z Cleaning up orphan processes
+Terraform Plan	Complete job	2026-04-02T07:17:29.6349390Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/upload-artifact@v4, azure/login@v2, hashicorp/setup-terraform@v3. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
