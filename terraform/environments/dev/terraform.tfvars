@@ -46,7 +46,7 @@ frontdoor_name = "afd-enterprise-dev"
 
 # Monitoring
 log_analytics_name = "law-vwan-dev"
-alert_email        = "test@example.com"
+alert_email = ""
 
 # Tags
 tags = {
@@ -60,6 +60,3 @@ admin_username = "azureadmin"
 
 # SSL (ONLY path stays here)
 ssl_cert_path = "./certs/dev-cert.pfx"
-
-# SSH (optional: keep or move to secret)
-ssh_public_key = "ssh-rsa AAAA..."
