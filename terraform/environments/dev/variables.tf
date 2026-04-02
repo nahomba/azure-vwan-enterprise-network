@@ -173,3 +173,23 @@ variable "spoke_dev_subnets" {
     address_prefixes = list(string)
   }))
 }
+
+# ============================================
+# Application Gateway SKU
+# ============================================
+variable "appgw_sku" {
+  description = "Application Gateway SKU configuration"
+  type = object({
+    name     = string
+    tier     = string
+    capacity = number
+  })
+}
+
+# ============================================
+# Firewall SKU Tier
+# ============================================
+variable "firewall_sku_tier" {
+  description = "Azure Firewall SKU Tier"
+  type        = string
+}

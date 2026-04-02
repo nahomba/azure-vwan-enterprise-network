@@ -46,7 +46,7 @@ frontdoor_name = "afd-enterprise-dev"
 
 # Monitoring
 log_analytics_name = "law-vwan-dev"
-alert_email = "queenivanah@outlook.com"
+alert_email        = "queenivanah@outlook.com"
 
 # Tags
 tags = {
@@ -57,6 +57,3 @@ tags = {
 
 # VM
 admin_username = "azureadmin"
-
-# SSL (ONLY path stays here)
-ssl_cert_path = "./certs/dev-cert.pfx"
