@@ -69,11 +69,11 @@ Plan artifact storage (tfplan)
 Manual approval before production apply
 OIDC-based Azure authentication
 
-**Project Sturcture
+##Project Sturcture
 
 <img width="363" height="777" alt="projStrucutre" src="https://github.com/user-attachments/assets/2cba72d8-6cf7-47cc-9b5e-6f746130bcc2" />
 
- **Key Modules:
+##Key Modules:
 
 Module	           Purpose
 vwan	          Global network backbone
