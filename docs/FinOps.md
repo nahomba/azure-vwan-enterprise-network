@@ -1,13 +1,13 @@
 # FinOps Strategy – Azure Virtual WAN Enterprise Architecture
- Overview
+## Overview
 
-This project applies a FinOps (Financial Operations) approach to ensure cloud resources are:
+### This project applies a FinOps (Financial Operations) approach to ensure cloud resources are:
 
 Cost-aware
 Efficient
 Continuously optimized
 
-FinOps bridges the gap between:
+### FinOps bridges the gap between:
 
 Engineering (DevOps / Cloud)
 Finance (Cost control & budgeting)
@@ -15,45 +15,45 @@ Business (Value delivery)
 
  The objective is not just to deploy infrastructure, but to ensure it delivers maximum business value per cost unit.
 
- FinOps Principles Applied
+ ### FinOps Principles Applied
  1. Visibility
 
 All resources are tagged, monitored, and traceable, enabling full cost transparency.
 
- Implementation
+## Implementation
 
-Standardized tagging strategy:
+### Standardized tagging strategy:
 
 Environment = Production / Development
 Project     = Azure-vWAN-Enterprise
 Owner       = DevOps-Team
 CostCenter  = IT-Infrastructure
-Centralized monitoring via:
+### Centralized monitoring via:
 Log Analytics Workspace
 Azure Cost Management
 
- Enables answering critical questions:
+### Enables answering critical questions:
 
 Who is spending?
 Where is cost coming from?
 Why is it increasing?
  2. Optimization
 
-Infrastructure is designed to balance:
+### Infrastructure is designed to balance:
 
 Performance
 Security
 Cost
- Implementation
+## Implementation
 
-DEV Environment
+### DEV Environment
 
 Single region
 Minimal infrastructure footprint
 No Azure Front Door
 Lower SKUs
 
-PROD Environment
+### PROD Environment
 
 Multi-region (East US + West Europe)
 Full security stack (Firewall, WAF, Front Door)
@@ -61,11 +61,11 @@ High availability design
 
  Ensures cost aligns with environment purpose and business impact
 
- 3. Governance
+ ### 3. Governance
 
 Controls are enforced to prevent unnecessary or uncontrolled spending.
 
- Implementation
+### Implementation
 Infrastructure defined using Terraform (IaC)
 Version-controlled deployments (GitHub)
 No manual resource creation → reduces drift
@@ -74,17 +74,17 @@ WAF enabled
 Firewall enforced
 Private networking
 
- Reduces risk of:
+### Reduces risk of:
 
 Misconfigurations
 Shadow IT
 Cost leaks
 
- 4. Continuous Improvement
+### 4. Continuous Improvement
 
 Cost is continuously reviewed and optimized over time.
 
- Implementation
+ ### Implementation
 terraform plan used before every deployment
 Security scanning via Checkov
 CI/CD pipeline with:
@@ -94,15 +94,13 @@ Cost-aware architectural decisions
 
  Promotes proactive cost control, not reactive fixes
 
- FinOps Lifecycle
+ ### FinOps Lifecycle
 
-This project aligns with the three core phases of FinOps:
-
- Inform
+### This project aligns with the three core phases of FinOps:
 
 Understand cloud usage and cost drivers.
 
-In this project:
+### In this project:
 
 Cost analysis documentation
 Resource tagging strategy
@@ -111,7 +109,7 @@ Full architecture visibility
 
 Improve efficiency and reduce waste.
 
-In this project:
+### In this project:
 
 DEV vs PROD separation
 Minimal footprint in DEV
@@ -120,7 +118,7 @@ Modular Terraform design
 
 Continuously manage and govern cloud usage.
 
-In this project:
+### In this project:
 
 Infrastructure as Code (Terraform)
 Security scanning (Checkov)
@@ -147,11 +145,11 @@ Reduce unnecessary diagnostic logs
 Tune retention policies
  Cost vs Value Mindset
 
-This architecture demonstrates a core FinOps principle:
+### This architecture demonstrates a core FinOps principle:
 
- The goal is not to minimize cost — but to maximize value.
+The goal is not to minimize cost — but to maximize value.
 
-Example
+### Example
 
 Azure Firewall (Premium)
 
@@ -163,9 +161,9 @@ Compliance readiness
 
  Justified investment for enterprise workloads
 
- FinOps Maturity Level
+## FinOps Maturity Level
 
-This project demonstrates Level 2–3 FinOps maturity:
+### This project demonstrates Level 2–3 FinOps maturity:
 
 Level	    Description
 Level 1	    Basic cost awareness
@@ -174,7 +172,7 @@ Level 3	    Optimization and governance
 Level 4	    Automated cost optimization
 Level 5	    Real-time cost intelligence
 
- Key Takeaways
+## Key Takeaways
 Cost is designed, not accidental
 Environments are right-sized by purpose
 Security and scalability are intentionally prioritized
@@ -184,9 +182,9 @@ FinOps enables continuous optimization and accountability
 
 I applied FinOps principles by designing separate DEV and PROD environments, using Terraform for controlled deployments, and integrating validation steps like Terraform plan and Checkov into a CI/CD pipeline. I ensured cost visibility through tagging and aligned infrastructure decisions with business value rather than simply minimizing cost.”
 
- Summary
+## Summary
 
-This project demonstrates how to:
+### This project demonstrates how to:
 
 Build cost-aware cloud infrastructure
 Apply FinOps principles in a real-world architecture
