@@ -124,6 +124,42 @@ Validation → Security Scan → Plan → Approval → Apply
 │   │   └── prod/
 │   └── modules/
 ```
+## Detailed Project Structure
+
+For deeper visibility into the modular design:
+
+```
+terraform/
+├── environments/
+│   ├── dev/
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   └── terraform.tfvars
+│   └── prod/
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── outputs.tf
+│       └── terraform.tfvars
+└── modules/
+    ├── vwan/
+    ├── vhub/
+    ├── spoke/
+    ├── firewall/
+    ├── appgateway/
+    ├── frontdoor/
+    ├── monitoring/
+    ├── vm/
+    ├── vpn/
+    ├── vpn-connection/
+    ├── route-table/
+    ├── routing-intent/
+    ├── private-endpoint/
+    ├── private-dns/
+    └── nsg/
+```
+
+This modular structure enables reusable, scalable, and environment-specific deployments aligned with enterprise Infrastructure as Code practices.
 
 ---
 
