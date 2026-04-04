@@ -143,7 +143,7 @@ Unexpected cost spikes
   * Logging Optimization 
 Reduce unnecessary diagnostic logs
 Tune retention policies
- Cost vs Value Mindset
+Cost vs Value Mindset
 
 ### This architecture demonstrates a core FinOps principle:
 
