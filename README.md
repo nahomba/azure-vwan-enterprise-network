@@ -1,107 +1,200 @@
-azure-vwan-enterprise-network
-Terraform • DevOps • Multi-Region • Zero Trust Overview
+# Azure Virtual WAN Enterprise Network
 
-This project demonstrates a production-grade Azure architecture built using Terraform (Infrastructure as Code) and deployed via secure CI/CD pipelines with approval gates.
+**Terraform • DevOps • Multi-Region • Zero Trust**
 
-It is designed based on real enterprise cloud principles:
+---
 
-Multi-region high availability Zero Trust security (layered defense) Controlled deployments (approval gates) Cost-aware design (FinOps) Fully modular Terraform architecture Architecture Overview
+## Overview
 
-User ↓ Azure Front Door (Global WAF) ↓ Application Gateway (Regional WAF) ↓ Private Backend (VMs in Spoke VNets) ↓ Azure Virtual WAN (Global Backbone) ↓ Azure Firewall (Centralized Security)
+This project demonstrates a **production-grade Azure architecture** built using **Terraform (Infrastructure as Code)** and deployed through **secure CI/CD pipelines with approval gates**.
 
-Environments:
-DEV (Cost-Optimized) Single region (East US) Minimal resources Firewall Basic No Front Door
+It is designed based on real-world enterprise cloud principles:
 
-PROD (Enterprise-Grade): Multi-region (East US + West Europe) Azure Front Door Premium Azure Firewall Premium Full monitoring + diagnostics Approval-gated deployments Security & Governance Security Layers Azure Front Door (Global WAF) Application Gateway WAF (Regional) Azure Firewall (L3–L7 inspection) NSGs (network segmentation) Private workloads (no public IPs)
+- Multi-region high availability  
+- Zero Trust security (layered defense)  
+- Controlled deployments (approval gates)  
+- Cost-aware architecture (FinOps)  
+- Fully modular Terraform design  
 
-DevSecOps
-Checkov security scanning Terraform validation & formatting Secure authentication via OIDC No secrets stored in GitHub
+---
 
-Governance Controls
-Manual approval gates for production Environment protection rules Controlled Terraform apply using saved plans
+## Architecture Overview
 
-CI/CD Pipeline:
+### Traffic Flow
+
+```
+User
+  ↓
+Azure Front Door (Global WAF)
+  ↓
+Application Gateway (Regional WAF)
+  ↓
+Private Backend (VMs in Spoke VNets)
+  ↓
+Azure Virtual WAN (Global Backbone)
+  ↓
+Azure Firewall (Centralized Security)
+```
+
+---
+
+## Environments
+
+### DEV (Cost-Optimized)
+
+- Single region (East US)  
+- Minimal infrastructure footprint  
+- Azure Firewall (Basic SKU)  
+- No Azure Front Door  
+- Reduced cost and simplified architecture  
+
+---
+
+### PROD (Enterprise-Grade)
+
+- Multi-region (East US + West Europe)  
+- Azure Front Door Premium (global entry point)  
+- Azure Firewall Premium (advanced security)  
+- Full monitoring and diagnostics  
+- Approval-gated deployments  
+
+---
+
+## Security & Governance
+
+### Layered Security (Zero Trust)
+
+- Azure Front Door (Global WAF)  
+- Application Gateway (Regional WAF)  
+- Azure Firewall (L3–L7 inspection)  
+- Network Security Groups (NSGs)  
+- Private workloads (no public IP exposure)  
+
+---
+
+### DevSecOps
+
+- Checkov security scanning  
+- Terraform validation and formatting  
+- Secure authentication via OIDC (no secrets in pipelines)  
+- No credentials stored in GitHub  
+
+---
+
+### Governance Controls
+
+- Manual approval gates for production  
+- Environment protection rules  
+- Controlled Terraform apply using saved plans  
+- Drift prevention via CI/CD  
+
+---
+
+## CI/CD Pipeline
+
+### Pipeline Flow
+
+```
 Validation → Security Scan → Plan → Approval → Apply
+```
 
-Pipeline Features
-Terraform validation (fmt, validate) Security scanning (Checkov) Plan artifact storage (tfplan) Manual approval before production apply OIDC-based Azure authentication
+### Pipeline Features
 
-Project Sturcture
-readmee
-Key Modules:
-Module Purpose vwan Global network backbone vhub Regional hubs spoke Application VNets firewall Centralized security appgateway Regional load balancing (WAF) frontdoor Global entry point vpn Hybrid connectivity monitoring Logs and diagnostics routing-intent Traffic control policies
+- Terraform validation (`fmt`, `validate`)  
+- Security scanning (Checkov)  
+- Plan artifact storage (`tfplan`)  
+- Manual approval before production deployment  
+- OIDC-based Azure authentication  
 
-Observability
-Log Analytics Workspace Diagnostic settings for: Firewalls Application Gateways Virtual Machines
+---
 
-FinOps Approach
-This project applies FinOps principles: Environment-based cost control (DEV vs PROD) Resource tagging for visibility Cost-aware architecture decisions
+## Project Structure
 
-See:
-docs/FinOps.md docs/COST_ANALYSIS.md
+```
+.
+├── README.md
+├── diagrams/
+│   └── architecture.md
+├── docs/
+│   ├── COST_ANALYSIS.md
+│   └── FinOps.md
+├── terraform/
+│   ├── environments/
+│   │   ├── dev/
+│   │   └── prod/
+│   └── modules/
+```
 
-Important Notes. Backend workloads are private (no public exposure) Azure Firewall is deployed in hub (not inline by default) Traffic routing via firewall depends on routing configuration
+---
 
-Next Steps:
-Planned improvements: End-to-end TLS with Azure Key Vault Advanced routing policies (failover + segmentation) Private Endpoints for deeper Zero Trust Cost optimization (logging + SKUs) Key Takeaway
+## Key Modules
 
-This project reflects a shift from deploying infrastructure to designing secure, scalable, and governed cloud systems.
+| Module            | Purpose                          |
+|------------------|----------------------------------|
+| vwan             | Global network backbone          |
+| vhub             | Regional hubs                    |
+| spoke            | Application VNets                |
+| firewall         | Centralized security             |
+| appgateway       | Regional load balancing (WAF)    |
+| frontdoor        | Global entry point               |
+| vpn              | Hybrid connectivity              |
+| monitoring       | Logs and diagnostics             |
+| routing-intent   | Traffic control policies         |
+| private-endpoint | Private connectivity             |
+| private-dns      | Internal name resolution         |
 
-Related Documentation: diagrams/architecture.md docs/COST_ANALYSIS.md docs/FinOps.md
-
-## Project Sturcture
-
-<img width="270" height="586" alt="readmee" src="https://github.com/user-attachments/assets/318eb402-2aea-4109-a220-44a65cfc0c17" />
-
-
-## Key Modules:
-
-Module	           Purpose
-vwan	          Global network backbone
-vhub	          Regional hubs
-spoke	          Application VNets
-firewall	      Centralized security
-appgateway	      Regional load balancing (WAF)
-frontdoor	      Global entry point
-vpn	              Hybrid connectivity
-monitoring	      Logs and diagnostics
-routing-intent	  Traffic control policies
+---
 
 ## Observability
-Log Analytics Workspace
-Diagnostic settings for:
-Firewalls
-Application Gateways
-Virtual Machines
+
+- Azure Log Analytics Workspace  
+- Diagnostic settings enabled for:
+  - Azure Firewall  
+  - Application Gateway  
+  - Virtual Machines  
+
+---
 
 ## FinOps Approach
-This project applies FinOps principles:
-Environment-based cost control (DEV vs PROD)
-Resource tagging for visibility
-Cost-aware architecture decisions
 
-## See:
+This project applies **FinOps principles**:
 
-docs/FinOps.md
-docs/COST_ANALYSIS.md
+- Environment-based cost control (DEV vs PROD)  
+- Resource tagging for cost visibility  
+- Cost-aware architecture decisions  
 
-Important Notes.
-Backend workloads are private (no public exposure)
-Azure Firewall is deployed in hub (not inline by default)
-Traffic routing via firewall depends on routing configuration
+See:
 
-## Next Steps:
+- `docs/FinOps.md`  
+- `docs/COST_ANALYSIS.md`  
 
-Planned improvements:
- End-to-end TLS with Azure Key Vault
- Advanced routing policies (failover + segmentation)
- Private Endpoints for deeper Zero Trust
- Cost optimization (logging + SKUs)
- Key Takeaway
+---
 
-This project reflects a shift from deploying infrastructure to designing secure, scalable, and governed cloud systems.
+## Important Notes
 
-Related Documentation:
-diagrams/architecture.md
-docs/COST_ANALYSIS.md
-docs/FinOps.md
+- Backend workloads are **fully private (no public exposure)**  
+- Azure Firewall is deployed in the **hub (not inline by default)**  
+- Traffic flows through the firewall **only when routing is configured**  
+
+---
+
+## Next Steps
+
+- End-to-end TLS using Azure Key Vault  
+- Advanced routing policies (failover and segmentation)  
+- Private Endpoints for deeper Zero Trust  
+- Cost optimization (logging, SKUs, scaling)  
+
+---
+
+## Key Takeaway
+
+This project demonstrates a transition from **deploying infrastructure** to **designing secure, scalable, and governed cloud systems**, aligned with enterprise architecture best practices.
+
+---
+
+## Related Documentation
+
+- `diagrams/architecture.md`  
+- `docs/COST_ANALYSIS.md`  
+- `docs/FinOps.md`  
