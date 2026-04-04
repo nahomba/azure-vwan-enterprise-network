@@ -1,7 +1,7 @@
 # Azure Virtual WAN Enterprise Architecture (Terraform-Aligned)
- Overview
+## Overview
 
-This project implements a production-grade, multi-region Azure architecture using Terraform, designed with a strong focus on:
+### This project implements a production-grade, multi-region Azure architecture using Terraform, designed with a strong focus on:
 
 High availability
 Zero Trust security
@@ -10,9 +10,9 @@ Network segmentation
 Observability
 Cost-awareness (FinOps)
 
- This is not just a deployment — it is a real-world architecture design reflecting enterprise constraints and trade-offs.
+## This is not just a deployment — it is a real-world architecture design reflecting enterprise constraints and trade-offs.
 
- Architecture Principles
+ ### Architecture Principles
 🔹 High Availability
 Active deployment across:
 East US
@@ -21,7 +21,7 @@ Global failover via Azure Front Door
 Regional redundancy with Application Gateway
 🔹 Zero Trust (Layered Security)
 
-Defense-in-depth strategy:
+### Defense-in-depth strategy:
 
 Azure Front Door Premium
 Global entry point
@@ -37,7 +37,7 @@ Regional scaling via Application Gateway autoscaling
 Modular Terraform design for reuse
 🔹 Network Segmentation
 
-Hub-and-spoke model with dedicated subnets:
+### Hub-and-spoke model with dedicated subnets:
 
 AppGW
 Web
@@ -62,13 +62,13 @@ Approval gates
 Drift awareness
  Actual Traffic Flow (Critical Insight)
 
- Important: Azure Firewall is not inline by default
+ ## Important: Azure Firewall is not inline by default
 
 ### Real Traffic Flow (as deployed)
 <img width="441" height="255" alt="trafficFlow" src="https://github.com/user-attachments/assets/01b730c0-fb01-4b9a-a292-70e3e603771b" />
 
 
-Azure Firewall is used for:
+### Azure Firewall is used for:
 
 East-West traffic (between VNets)
 Controlled outbound traffic (egress)
@@ -78,34 +78,11 @@ Traffic inspection when routing is enforced
 
 UDRs (User Defined Routes) are configured
 Routing intent is explicitly applied
- High-Level Architecture Diagram
-                  USER / CLIENT
-                       │
-                       ▼
-     Azure Front Door Premium (Global WAF)
-                       │
-        (Private Link to App Gateways)
-            ┌──────────┴──────────┐
-            │                     │
-            ▼                     ▼
- App Gateway (East US)   App Gateway (West Europe)
-    (WAF v2)                 (WAF v2)
-            │                     │
-            ▼                     ▼
- Backend VM (Private)     Backend VM (Private)
-            │                     │
-            └──────────┬──────────┘
-                       │
-                       ▼
-          Azure Virtual WAN (Global Backbone)
-                       │
-            ┌──────────┴──────────┐
-            │                     │
-            ▼                     ▼
- Virtual Hub (EUS)        Virtual Hub (WEU)
-            │                     │
-            ▼                     ▼
-     Azure Firewall        Azure Firewall
+### High-Level Architecture Diagram
+
+<img width="392" height="608" alt="diagram" src="https://github.com/user-attachments/assets/9e1e818a-6f18-426f-b440-69e502aa99a0" />
+
+
  Detailed Architecture (Terraform-Aligned)
  Global Layer
 Azure Front Door Premium
@@ -115,10 +92,10 @@ Private Link to App Gateways
  Regional Layer (Active-Active)
 East US & West Europe
 
-Each region contains:
+### Each region contains:
 
-Application Gateway (WAF v2)
-Spoke VNet:
+## Application Gateway (WAF v2)
+### Spoke VNet:
 AppGW subnet
 Web subnet
 App subnet
@@ -130,8 +107,8 @@ Virtual Hubs per region:
 Azure Firewall (Premium)
 VPN Gateway
 Hub-to-hub connectivity
- Observability Layer
-Log Analytics Workspace:
+ ## Observability Layer
+### Log Analytics Workspace:
 Firewall logs
 VM metrics
 Diagnostic logs
@@ -140,14 +117,14 @@ Diagnostic logs
 Deployed in Virtual WAN Hub
 Not inline between App Gateway and backend
 🔹 Routing Dependency
-Firewall inspection depends on:
+### Firewall inspection depends on:
 Routing intent
 UDR configuration
 🔹 Secure Ingress
 Azure Front Door → App Gateway via Private Link
 No direct public exposure of backend services
 🔹 Private Compute
-VMs:
+### VMs:
 No public IPs
 Accessible only through controlled layers
  Design Trade-Offs
@@ -168,9 +145,9 @@ Advanced routing policies (UDR + routing intent)
 Private service integrations (PaaS via Private Endpoints)
 Autoscaling tuning based on real traffic patterns
 Cost optimization based on usage telemetry
- Final Summary
+### Final Summary
 
-This architecture demonstrates:
+## This architecture demonstrates:
 
  Multi-region resilient design
  Layered Zero Trust security
