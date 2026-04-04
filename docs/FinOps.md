@@ -126,21 +126,21 @@ Monitoring via Log Analytics
 CI/CD pipeline with approval gates
  Practical FinOps Techniques
 
-🔹 Right-Sizing
+* Right-Sizing
 Use smaller SKUs in DEV
 Scale production resources based on real demand
-🔹 Environment Strategy
+* Environment Strategy
 DEV → Cost-optimized & minimal
 PROD → Fully resilient & secure
-🔹 Ephemeral Environments
+  * Ephemeral Environments
 Destroy non-production resources after testing
 Avoid idle infrastructure costs
-🔹 Monitoring & Alerts
+* Monitoring & Alerts
 Use Azure Cost Management budgets
 Configure alerts for:
 Budget thresholds
 Unexpected cost spikes
-🔹 Logging Optimization
+  * Logging Optimization 
 Reduce unnecessary diagnostic logs
 Tune retention policies
  Cost vs Value Mindset
