@@ -183,7 +183,7 @@ Continuously manage and govern cloud usage.
 
 This architecture demonstrates a core FinOps principle:
 
-> The goal is not to minimize cost — but to maximize value.
+> The goal is not to minimize cost, but to maximize value.
 
 ### Example
 
@@ -241,4 +241,4 @@ This project demonstrates how to:
 
 ## Final Insight
 
-FinOps is not just about saving money — it is about making **smarter engineering decisions** that align cost with business value.
+FinOps is not just about saving money, it is about making **smarter engineering decisions** that align cost with business value.
