@@ -64,18 +64,9 @@ Drift awareness
 
  Important: Azure Firewall is not inline by default
 
- Real Traffic Flow (as deployed)
-User / Client
-      │
-      ▼
-Azure Front Door (Global WAF + Load Balancer)
-      │
-      ▼
-Application Gateway (Regional WAF)
-      │
-      ▼
-Backend VM (Private IP in Spoke VNet)
-Where Firewall Comes In
+### Real Traffic Flow (as deployed)
+<img width="441" height="255" alt="trafficFlow" src="https://github.com/user-attachments/assets/01b730c0-fb01-4b9a-a292-70e3e603771b" />
+
 
 Azure Firewall is used for:
 
