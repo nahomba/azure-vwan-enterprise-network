@@ -69,34 +69,8 @@ Plan artifact storage (tfplan)
 Manual approval before production apply
 OIDC-based Azure authentication
 
- Project Structure
-.
-├── README.md
-├── diagrams/
-│   └── architecture.md
-├── docs/
-│   ├── COST_ANALYSIS.md
-│   └── FinOps.md
-├── terraform/
-│   ├── environments/
-│   │   ├── dev/
-│   │   └── prod/
-│   └── modules/
-│       ├── vwan/
-│       ├── vhub/
-│       ├── spoke/
-│       ├── firewall/
-│       ├── appgateway/
-│       ├── frontdoor/
-│       ├── monitoring/
-│       ├── vm/
-│       ├── vpn/
-│       ├── vpn-connection/
-│       ├── route-table/
-│       ├── routing-intent/
-│       ├── private-endpoint/
-│       ├── private-dns/
-│       └── nsg/
+ <img width="352" height="696" alt="Project Structure " src="https://github.com/user-attachments/assets/23347ead-a05d-480a-9548-612e1c934c83" />
+
 
  Key Modules:
 
