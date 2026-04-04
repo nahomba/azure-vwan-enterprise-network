@@ -27,7 +27,7 @@ Azure Virtual WAN (Global Backbone)
   ↓
 Azure Firewall (Centralized Security)
 
- Environments:
+## Environments:
 DEV (Cost-Optimized)
 Single region (East US)
 Minimal resources
@@ -48,32 +48,32 @@ Azure Firewall (L3–L7 inspection)
 NSGs (network segmentation)
 Private workloads (no public IPs)
 
- DevSecOps
+## DevSecOps
 Checkov security scanning
 Terraform validation & formatting
 Secure authentication via OIDC
 No secrets stored in GitHub
 
- Governance Controls
+## Governance Controls
 Manual approval gates for production
 Environment protection rules
 Controlled Terraform apply using saved plans
 
-CI/CD Pipeline:
+## CI/CD Pipeline:
 Validation → Security Scan → Plan → Approval → Apply
 
- Pipeline Features
+## Pipeline Features
 Terraform validation (fmt, validate)
 Security scanning (Checkov)
 Plan artifact storage (tfplan)
 Manual approval before production apply
 OIDC-based Azure authentication
 
-Project Sturcture
+## Project Sturcture
 
 <img width="363" height="777" alt="projStrucutre" src="https://github.com/user-attachments/assets/2cba72d8-6cf7-47cc-9b5e-6f746130bcc2" />
 
-Key Modules:
+## Key Modules:
 
 Module	           Purpose
 vwan	          Global network backbone
@@ -86,20 +86,20 @@ vpn	              Hybrid connectivity
 monitoring	      Logs and diagnostics
 routing-intent	  Traffic control policies
 
- Observability
+## Observability
 Log Analytics Workspace
 Diagnostic settings for:
 Firewalls
 Application Gateways
 Virtual Machines
 
- FinOps Approach
+## FinOps Approach
 This project applies FinOps principles:
 Environment-based cost control (DEV vs PROD)
 Resource tagging for visibility
 Cost-aware architecture decisions
 
- See:
+## See:
 
 docs/FinOps.md
 docs/COST_ANALYSIS.md
@@ -109,7 +109,7 @@ Backend workloads are private (no public exposure)
 Azure Firewall is deployed in hub (not inline by default)
 Traffic routing via firewall depends on routing configuration
 
- Next Steps:
+## Next Steps:
 
 Planned improvements:
  End-to-end TLS with Azure Key Vault
