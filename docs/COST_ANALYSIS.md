@@ -1,218 +1,243 @@
 # Azure Virtual WAN Enterprise Architecture – Cost Analysis
 
-# Overview
+## Overview
 
-This architecture represents a production-grade, enterprise-scale Azure deployment designed with a focus on:
+This architecture represents a **production-grade, enterprise-scale Azure deployment**, designed with a focus on:
 
-High availability
-Global scalability
-Advanced security (Zero Trust)
-Operational visibility
+- High availability  
+- Global scalability  
+- Advanced security (Zero Trust)  
+- Operational visibility  
 
-As a result, it is intentionally cost-intensive by design, leveraging multiple always-on managed services across regions.
+As a result, it is **intentionally cost-intensive by design**, leveraging multiple always-on managed services across regions.
 
-In enterprise cloud, cost is not minimized, it is optimized relative to value, security, and reliability.
+In enterprise cloud environments, cost is not minimized — it is **optimized relative to value, security, and reliability**.
 
- Cost Breakdown by Service
- Azure Virtual WAN
+---
 
-Acts as the global networking backbone, connecting hubs, VNets, and hybrid environments.
+## Cost Breakdown by Service
 
-## Cost Drivers:
+### Azure Virtual WAN
 
-Number of Virtual Hubs
-Connected VNets (spokes)
-VPN / ExpressRoute connections
+Acts as the **global networking backbone**, connecting hubs, VNets, and hybrid environments.
 
-### Why it adds cost:
+**Cost Drivers:**
+- Number of Virtual Hubs  
+- Connected VNets (spokes)  
+- VPN / ExpressRoute connections  
 
-Simplifies complex global routing
-Enables centralized connectivity and segmentation
- Azure Firewall (Premium)
+**Why it adds cost:**
+- Simplifies complex global routing  
+- Enables centralized connectivity and segmentation  
 
-A fully managed Layer 3–7 firewall providing deep packet inspection and threat protection.
+---
 
-### Cost Drivers:
+### Azure Firewall (Premium)
 
-Always-on runtime (24/7)
-Data processed (GB)
-Premium features (IDS/IPS, TLS inspection)
+A fully managed **Layer 3–7 firewall** providing deep packet inspection and threat protection.
 
-### Why it adds cost:
+**Cost Drivers:**
+- Always-on runtime (24/7)  
+- Data processed (GB)  
+- Premium features (IDS/IPS, TLS inspection)  
 
-Inspects north-south and east-west traffic
-Enforces Zero Trust policies
-Provides enterprise-grade threat protection
- Azure Application Gateway (WAF v2)
+**Why it adds cost:**
+- Inspects north-south and east-west traffic  
+- Enforces Zero Trust security policies  
+- Provides enterprise-grade threat protection  
 
-Layer 7 load balancer with Web Application Firewall capabilities.
+---
 
-### Cost Drivers:
+### Azure Application Gateway (WAF v2)
 
-Autoscaling instances
-Request processing volume
-TLS termination
+A Layer 7 load balancer with integrated **Web Application Firewall (WAF)**.
 
-### Why it adds cost:
+**Cost Drivers:**
+- Autoscaling instances  
+- Request processing volume  
+- TLS termination  
 
-Deep HTTP/S inspection
-OWASP Top 10 protection
-High availability and autoscaling
- Azure Front Door (Premium)
+**Why it adds cost:**
+- Deep HTTP/S inspection  
+- OWASP Top 10 protection  
+- High availability and autoscaling  
 
-Global entry point combining WAF, CDN, and load balancing.
+---
 
-### Cost Drivers:
+### Azure Front Door (Premium)
 
-Request volume
-Data transfer (egress)
-WAF and rule processing
+A global entry point combining **WAF, CDN, and intelligent routing**.
 
-### Why it adds cost:
+**Cost Drivers:**
+- Request volume  
+- Data transfer (egress)  
+- WAF and rules engine processing  
 
-Global edge presence
-Low-latency routing
-Advanced protection (bot filtering, rules engine)
- VPN Gateway
+**Why it adds cost:**
+- Global edge network presence  
+- Low-latency routing  
+- Advanced protection (bot filtering, rule engine)  
 
-Provides hybrid connectivity between on-premises and Azure.
+---
 
-### Cost Drivers:
+### VPN Gateway
 
-Gateway SKU
-Provisioned throughput
+Provides **hybrid connectivity** between on-premises and Azure.
 
-### Why it adds cost:
+**Cost Drivers:**
+- Gateway SKU  
+- Provisioned throughput  
 
-Dedicated infrastructure
-High availability SLA
-BGP routing support
- Log Analytics Workspace
+**Why it adds cost:**
+- Dedicated infrastructure  
+- High availability SLA  
+- BGP routing support  
 
-Centralized platform for monitoring, logging, and observability.
+---
 
-### Cost Drivers:
+### Log Analytics Workspace
 
-Data ingestion (GB/day)
-Retention period
+Centralized platform for **monitoring, logging, and observability**.
 
-### Why it adds cost:
+**Cost Drivers:**
+- Data ingestion (GB/day)  
+- Retention period  
 
-High log volume from:
-Azure Firewall
-Application Gateway
-Diagnostics
- Data Transfer (Egress)
+**Why it adds cost:**
+- High log volume generated from:
+  - Azure Firewall  
+  - Application Gateway  
+  - Diagnostic settings  
 
-Charges apply for outbound data from Azure.
+---
 
-### Cost Drivers:
+### Data Transfer (Egress)
 
-Internet-bound traffic
-Cross-region communication
+Charges apply for **outbound data from Azure**.
 
-### Why it adds cost:
+**Cost Drivers:**
+- Internet-bound traffic  
+- Cross-region communication  
 
-Multi-region architecture
-Global user access patterns
- Key Cost Drivers
- Always-On Services
+**Why it adds cost:**
+- Multi-region architecture  
+- Global user access patterns  
+
+---
+
+## Key Cost Drivers
+
+### Always-On Services
 
 The following services run continuously:
 
-Azure Firewall
-Application Gateway
-VPN Gateway
+- Azure Firewall  
+- Application Gateway  
+- VPN Gateway  
 
- These incur cost even with low or no traffic
+These incur cost **even with low or no traffic**.
 
- Multi-Region Deployment (PROD)
-East US + West Europe
-Duplicate infrastructure
+---
 
-### Results in cost duplication across:
+### Multi-Region Deployment (PROD)
 
-Firewalls
-VNets
-Gateways
-Compute
-Layered Security (Defense-in-Depth)
+- Regions: East US + West Europe  
+- Infrastructure is duplicated across regions  
 
-### Multiple security layers:
+**Impact:**
+- Firewalls  
+- VNets  
+- Gateways  
+- Compute  
 
-Azure Front Door WAF
-Application Gateway WAF
-Azure Firewall
+This significantly increases cost but ensures **high availability and resilience**.
 
-Stronger security = higher operational cost
+---
 
-Data Processing & Logging
-Firewall inspection
-WAF processing
-Log Analytics ingestion
+### Layered Security (Defense-in-Depth)
 
- Costs scale with traffic volume and logging level
+Multiple security layers are implemented:
 
- Cost Optimization Philosophy
+- Azure Front Door (Global WAF)  
+- Application Gateway (Regional WAF)  
+- Azure Firewall  
 
-### This project prioritizes:
+**Trade-off:**
+Stronger security → Higher operational cost  
 
-Security over cost
-Scalability over simplicity
-Enterprise architecture patterns
+---
 
-The goal is not to reduce cost at all costs,but to balance cost with business value, risk, and performance.
+### Data Processing & Logging
 
- Real-World Optimization Strategies
-🔹 Right-Sizing Resources
-Use appropriate SKUs (not always Premium)
-Scale based on actual usage patterns
-🔹 Environment-Based Design
-DEV → Minimal, cost-optimized
-PROD → Full enterprise architecture
-🔹 Ephemeral Environments
-Destroy non-production resources when not in use
-Use short-lived environments for testing
-🔹 Logging Optimization
-Reduce unnecessary diagnostic logs
-Adjust retention policies
-🔹 Continuous Monitoring
-Use Azure Cost Management
-Configure:
-Budgets
-Cost alerts
-Anomaly detection
+- Firewall inspection  
+- WAF processing  
+- Log Analytics ingestion  
 
-Important Note
+Costs scale with **traffic volume and logging configuration**.
 
-### This project was validated using:
+---
 
-terraform plan
-Static analysis with Checkov
+## Cost Optimization Philosophy
 
- No infrastructure was deployed, avoiding unnecessary cloud costs.
+This architecture prioritizes:
+
+- Security over cost  
+- Scalability over simplicity  
+- Enterprise-grade design patterns  
+
+The goal is not to minimize cost, but to **balance cost with business value, risk, and performance**.
+
+---
+
+## Real-World Optimization Strategies
+
+### Right-Sizing Resources
+- Use appropriate SKUs (not always Premium)  
+- Scale based on actual usage  
+
+### Environment-Based Design
+- DEV → Minimal, cost-optimized  
+- PROD → Full enterprise architecture  
+
+### Ephemeral Environments
+- Destroy non-production resources when not in use  
+- Use short-lived environments for testing  
+
+### Logging Optimization
+- Reduce unnecessary diagnostic logs  
+- Adjust retention policies  
+
+### Continuous Monitoring
+- Use Azure Cost Management  
+- Configure:
+  - Budgets  
+  - Cost alerts  
+  - Anomaly detection  
+
+---
+
+## Important Note
+
+This project was validated using:
+
+- `terraform plan`  
+- Static analysis with Checkov  
+
+No infrastructure was deployed, avoiding unnecessary cloud costs.
+
+---
 
 ## Summary
 
-### This architecture demonstrates:
+This architecture demonstrates:
 
-Enterprise-grade cloud design
-Real-world cost trade-offs
-Security-first approach
-Scalable global infrastructure
+- Enterprise-grade cloud design  
+- Real-world cost trade-offs  
+- Security-first approach  
+- Scalable global infrastructure  
+
 ### Key Takeaway
 
-Enterprise cloud architectures are expensive by design —
-the objective is not to eliminate cost, but to optimize it intelligently while maintaining security, performance, and reliability.
+Enterprise cloud architectures are **expensive by design**.
 
-What changed (so you know why this is strong)
-Cleaner structure → easier to read
-More “architect-level” language
-Clear separation of cost drivers vs value
-Strong FinOps mindset (very important for interviews)
-Better storytelling → not just listing services
-
-### If you want next, I can:
-
-Align your FinOps.md to match this tone
-Or create a 1-slide architecture summary
+The objective is not to eliminate cost, but to **optimize it intelligently while maintaining security, performance, and reliability**.
