@@ -132,7 +132,7 @@ Scale production resources based on real demand
 * Environment Strategy
 DEV → Cost-optimized & minimal
 PROD → Fully resilient & secure
-  * Ephemeral Environments
+* Ephemeral Environments
 Destroy non-production resources after testing
 Avoid idle infrastructure costs
 * Monitoring & Alerts
@@ -140,7 +140,7 @@ Use Azure Cost Management budgets
 Configure alerts for:
 Budget thresholds
 Unexpected cost spikes
-  * Logging Optimization 
+* Logging Optimization 
 Reduce unnecessary diagnostic logs
 Tune retention policies
 Cost vs Value Mindset
