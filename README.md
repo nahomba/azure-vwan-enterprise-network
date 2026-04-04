@@ -71,7 +71,8 @@ OIDC-based Azure authentication
 
 ## Project Sturcture
 
-<img width="363" height="777" alt="projStrucutre" src="https://github.com/user-attachments/assets/2cba72d8-6cf7-47cc-9b5e-6f746130bcc2" />
+<img width="357" height="602" alt="readme" src="https://github.com/user-attachments/assets/e4ea06d1-7478-48dd-a969-8a69b3e9c0ca" />
+
 
 ## Key Modules:
 
