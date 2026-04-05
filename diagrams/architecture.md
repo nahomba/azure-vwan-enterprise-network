@@ -81,7 +81,7 @@ In reality:
   - **User Defined Routes (UDRs)** in spoke VNets  
   - **Routing Intent** in Virtual WAN hubs  
 
-## This design allows flexibility:
+# This design allows flexibility:
 - You can enforce inspection where needed  
 - Avoid unnecessary latency for internal trusted traffic  
 - Control egress paths centrally  
